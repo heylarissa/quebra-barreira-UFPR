@@ -59,3 +59,27 @@ Casos:
 A: Aprovação em mais de 2/3 das disciplinas do sem. anterior
 B: 1/2 de aprovação no sem. anterior
 C > 1/2 aprovação no sem. anterior
+
+
+Estrutura de projeto maven:
+- main: arquivos .java
+- resources
+- test
+
+Comandos:
+1. Criar o projeto:
+```shell
+mvn archetype:generate
+```
+
+2. Compilar
+```shell
+mvn compile
+```
+
+mvn exec:java -Dexec.mainClass="quebrabarreira.App"
+
+3. Executar
+```shell
+mvn exec:java
+```
