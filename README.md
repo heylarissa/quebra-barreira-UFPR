@@ -4,23 +4,38 @@ Trabalho da disciplina de Paradigmas de Programação
 O sistema tem por objetivo auxiliar o aluno no seu pedido de quebra de barreira, verificar a situação do
 aluno e gerar um arquivo texto com o pedido de quebra e seus dados.
 
-O sistema deve permitir que o aluno obtenha as suas informações do histórico importando um arquivo
-.CSV. Além disso, o sistema deverá importar dados sobre as disciplinas, sua disponibilidade no semestre
-e a grade curricular, também de arquivo .CSV.
+Requisitos:
+- Importar CSV com informações do aluno (exibir)
+- Importar CSV com as disciplinas, disponibilidade no semestre, grade curricular (exibir)
+- Listar matérias cursadas e matérias do curso (exibir)
+- Apresentar tabela com as matérias cursadas por período e matérias pendentes (exibir)
+- Apresentar dados de aprovação do último período (% de aprovação + quantas matérias reprovou por falta)
+- Mostrar ao aluno conj. de disciplinas ofertadas no semestre que não foram cursadas neste semestre, ordenadas por período
+- Possibilitar que o aluno selecione um conj. de disciplinas que ele deseja cursar (podendo escolher a prioridade delas)
+- O sistema deve calcular o número de disciplinas sugerido pelas regras aprovadas em colegiado e mostrar resultado.
+- O sistema deve permitir salvar os dados do pedido em um arquivo (podendo editar depois)
+- Ao clicar em enviar, o sistema deve gerar um arquivo texto contendo todos os dados do pedido.
 
-O sistema deverá colocar estes dados em uma lista com as matérias cursadas e uma lista das matérias
-do curso. O sistema deverá então apresentar uma tabela com as matérias cursadas por período e as
-matérias que faltam cursar para a barreira. Além disso, o sistema deverá apresentar os dados de aprovação
-do último período como porcentagem de aprovação e quantas matérias reprovou por falta.
+Tela inicial:
+- Opções:
+    * Solicitar quebra de pré-requisito (TelaSolicitacao)
+    * Exibir minhas informações (TelaInfoAluno)
 
-O sistema deverá mostrar ao aluno o conjunto de disciplinas ofertadas neste semestre que não foram
-cursadas neste semestre por ordem de período. O sistema deverá possibilitar que o aluno selecione um
-conjunto de disciplinas que ele deseja cursar com informação sobre a prioridade delas.  
+TelaSolicitacao:
+- Opções:
+    * Selecionar disciplinas que ele deseja cursar
+    * Cálculo do núm. de disciplinas sugeridos pelas regras do colegiado
+    * Salvar dados do pedido
+    * Enviar (gerar arquivo .txt com os dados do pedido)
 
-O sistema deverá calcular o número de disciplinas sugerido pelas regras aprovadas em colegiado e
-mostrar este resultado. O sistema deve permitir salvar os dados do pedido em um arquivo de forma a
-permitir que o aluno os edite posteriormente. Quando o aluno selecionar enviar, o sistema deverá gerar
-um arquivo texto contendo os dados do pedido.
+TelaInfoAluno:
+- Opções para o usuário:
+    * Listar disciplinas ofertadas esse semestre que não foram cursadas
+    * Matérias cursadas x Matérias do curso (Listar)
+    * Matérias cursadas x pendentes (por período)
+    * Dados de aprovação:
+        % Aprovação     |    num. de reprov. por falta
+
 
 
 * Java 11
