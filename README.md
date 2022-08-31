@@ -16,12 +16,12 @@ Requisitos:
 - O sistema deve permitir salvar os dados do pedido em um arquivo (podendo editar depois)
 - Ao clicar em enviar, o sistema deve gerar um arquivo texto contendo todos os dados do pedido.
 
-*Tela inicial:*
+**Tela inicial:**
 - Opções:
     * Solicitar quebra de pré-requisito (TelaSolicitacao)
     * Exibir minhas informações (TelaInfoAluno)
 
-*TelaSolicitacao: *
+**TelaSolicitacao:**
 - De acordo com o pdf quebra-barreira-requisito1
 - Opções:
     * Selecionar disciplinas que ele deseja cursar
@@ -29,7 +29,7 @@ Requisitos:
     * Salvar dados do pedido
     * Enviar (gerar arquivo .txt com os dados do pedido)
 
-*TelaInfoAluno:*
+**TelaInfoAluno:**
 - Opções para o usuário:
     * Listar disciplinas ofertadas esse semestre que não foram cursadas
     * Matérias cursadas x Matérias do curso (Listar)
