@@ -58,4 +58,3 @@ Casos:
 A: Aprovação em mais de 2/3 das disciplinas do sem. anterior
 B: 1/2 de aprovação no sem. anterior
 C > 1/2 aprovação no sem. anterior
-
