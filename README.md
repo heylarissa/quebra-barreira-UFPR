@@ -21,7 +21,8 @@ Tela inicial:
     * Solicitar quebra de pré-requisito (TelaSolicitacao)
     * Exibir minhas informações (TelaInfoAluno)
 
-TelaSolicitacao:
+TelaSolicitacao: 
+- De acordo com o pdf quebra-barreira-requisito1
 - Opções:
     * Selecionar disciplinas que ele deseja cursar
     * Cálculo do núm. de disciplinas sugeridos pelas regras do colegiado
