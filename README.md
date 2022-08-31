@@ -45,7 +45,7 @@ TelaInfoAluno:
 * Gerar .jar a ser executado com o comando java -jar
 * Modularização e Padronização: MVC
 
-Regras para quebra de pré-requisito:
+Regras para quebra de pré-requisito:  
 1. IRA >= 0,8, todos os pedidos de matrícula serão aceitos
 2. 3 matrículas para desempenho ruim (caso C)
 3. 5 matrículas para desempenho bom (caso A)
@@ -76,8 +76,6 @@ mvn archetype:generate
 ```shell
 mvn compile
 ```
-
-mvn exec:java -Dexec.mainClass="quebrabarreira.App"
 
 3. Executar
 ```shell
