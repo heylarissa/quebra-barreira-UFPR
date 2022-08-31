@@ -1,4 +1,4 @@
-package quebra-barreira;
+package quebrabarreira;
 
 import static org.junit.Assert.assertTrue;
 
