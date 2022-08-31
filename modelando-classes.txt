@@ -1,0 +1,28 @@
+﻿Nome da Classe: Aluno
+Responsabilidades:  Trazer informações sobre o aluno
+Colaboradores:  FileHandler
+ 
+Nome da Classe: Disciplina
+Responsabilidades:  Trazer informações sobre a disciplina
+Colaboradores:  FileHandler
+ 
+Nome da Classe: Histórico
+Responsabilidades:  Relacionar aluno e disciplinas cursadas
+Colaboradores:  Aluno, Disciplina
+ 
+Nome da Classe: TelaInfoAluno
+Responsabilidades:  Exibe as informações do histórico
+Colaboradores:  Histórico
+ 
+Nome da Classe: FileHandler
+Responsabilidades:  Permite manipulação de arquivos csv e txt (importação e exportação)
+Colaboradores:  
+ 
+Nome da Classe: TelaSolicitacao
+Responsabilidades:  Permite que o usuário faça a solicitação e gere arquivo txt com o pedido
+Colaboradores:  Disciplina, FileHandler
+ 
+Nome da Classe: TelaResultado
+Responsabilidades:  Informa ao usuário quais disciplinas serão aprovadas ou não, de acordo com as regras de quebra
+Colaboradores:  Histórico, FileHandler, TelaSolicitacao
+ 

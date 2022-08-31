@@ -73,3 +73,6 @@ mvn compile
 ```shell
 mvn exec:java
 ```
+
+## TO DO LIST:
+    - Gerar .jar executável (algo com mvn package)
