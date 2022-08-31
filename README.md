@@ -20,6 +20,8 @@ Requisitos:
 - O sistema deve permitir salvar os dados do pedido em um arquivo (podendo editar depois)
 - Ao clicar em enviar, o sistema deve gerar um arquivo texto contendo todos os dados do pedido.
 
+
+## VIEW
 **Tela inicial:**
 - Opções:
     * Solicitar quebra de pré-requisito (TelaSolicitacao)
@@ -76,3 +78,4 @@ mvn exec:java
 
 ## TO DO LIST:
     - Gerar .jar executável (algo com mvn package)
+    - Redirecionar telas com SWING: [video aqui](https://www.youtube.com/watch?v=pO1SNvqk6sg)
