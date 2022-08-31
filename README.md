@@ -52,7 +52,7 @@ Requisitos:
 7. Maximizada matrícula nos períodos mais próximos ao início do curso
 8. Obrigatória a matrícula na maior quantidade possível de disciplinas dentro da barreira.
 
-Casos:
+Casos:  
 A: Aprovação em mais de 2/3 das disciplinas do sem. anterior  
 B: 1/2 de aprovação no sem. anterior  
 C > 1/2 aprovação no sem. anterior  
