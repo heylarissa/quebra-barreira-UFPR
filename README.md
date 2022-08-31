@@ -21,3 +21,26 @@ O sistema deverá calcular o número de disciplinas sugerido pelas regras aprova
 mostrar este resultado. O sistema deve permitir salvar os dados do pedido em um arquivo de forma a
 permitir que o aluno os edite posteriormente. Quando o aluno selecionar enviar, o sistema deverá gerar
 um arquivo texto contendo os dados do pedido.
+
+
+* Java 11
+* Interface gráfica
+* Makefile
+* Gerar .jar a ser executado com o comando java -jar
+* Modularização e Padronização: MVC
+
+Regras para quebra de pré-requisito:
+1. IRA >= 0,8, todos os pedidos de matrícula serão aceitos
+2. 3 matrículas para desempenho ruim (caso C)
+3. 5 matrículas para desempenho bom (caso A)
+4. 4 matrículas para casos intermediários (caso B)
+5. Não conceder quebra para de CI212 para CI215
+6. Proibido quebra para optativas.
+7. Maximizada matrícula nos períodos mais próximos ao início do curso
+8. Obrigatória a matrícula na maior quantidade possível de disciplinas dentro da barreira.
+
+Casos:
+A: Aprovação em mais de 2/3 das disciplinas do sem. anterior
+B: 1/2 de aprovação no sem. anterior
+C > 1/2 aprovação no sem. anterior
+
