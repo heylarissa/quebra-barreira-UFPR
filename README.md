@@ -4,6 +4,10 @@ Trabalho da disciplina de Paradigmas de Programação
 O sistema tem por objetivo auxiliar o aluno no seu pedido de quebra de barreira, verificar a situação do
 aluno e gerar um arquivo texto com o pedido de quebra e seus dados.
 
+* Java 11
+* Gerar .jar a ser executado com o comando java -jar
+* Modularização e Padronização: MVC
+
 Requisitos:
 - Importar CSV com informações do aluno (exibir)
 - Importar CSV com as disciplinas, disponibilidade no semestre, grade curricular (exibir)
@@ -38,14 +42,7 @@ Requisitos:
         % Aprovação     |    num. de reprov. por falta
 
 
-
-* Java 11
-* Interface gráfica
-* Makefile
-* Gerar .jar a ser executado com o comando java -jar
-* Modularização e Padronização: MVC
-
-Regras para quebra de pré-requisito:  
+**Regras para quebra de pré-requisito:**
 1. IRA >= 0,8, todos os pedidos de matrícula serão aceitos
 2. 3 matrículas para desempenho ruim (caso C)
 3. 5 matrículas para desempenho bom (caso A)
@@ -60,13 +57,8 @@ A: Aprovação em mais de 2/3 das disciplinas do sem. anterior
 B: 1/2 de aprovação no sem. anterior
 C > 1/2 aprovação no sem. anterior
 
+**Comandos:**
 
-Estrutura de projeto maven:
-- main: arquivos .java
-- resources
-- test
-
-Comandos:
 1. Criar o projeto:
 ```shell
 mvn archetype:generate
