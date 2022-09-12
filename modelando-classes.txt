@@ -1,15 +1,32 @@
 ﻿Nome da Classe: Aluno
 Responsabilidades:  Trazer informações sobre o aluno
 Colaboradores:  FileHandler
- 
+
+ # Larissa
 Nome da Classe: Disciplina
 Responsabilidades:  Trazer informações sobre a disciplina
 Colaboradores:  FileHandler
- 
+Atributos: pegar tudo do csv
+
+ # Larissa
 Nome da Classe: Histórico
 Responsabilidades:  Relacionar aluno e disciplinas cursadas
 Colaboradores:  Aluno, Disciplina
- 
+Atributos: número de materias aprovadas no ultimo semestre
+período atual
+disciplina, periodo cursado, nota, IRA, lista de materias cursadas, matérias aprovadas no ultim. periodo,
+
+# Arthur
+Nome da Classe: PedidoDAO
+# Usa histórico
+Responsabilidades: Receber os dados do front e salvar 
+
+#  Arthur
+# Usa histórico
+Nome da Classe: ResultadoPedido
+Responsabilidades: Puxar informações a serem recebidas, recebe histórico, 
+Colaboradores: 
+
 Nome da Classe: TelaInfoAluno
 Responsabilidades:  Exibe as informações do histórico
 Colaboradores:  Histórico
@@ -25,4 +42,3 @@ Colaboradores:  Disciplina, FileHandler
 Nome da Classe: TelaResultado
 Responsabilidades:  Informa ao usuário quais disciplinas serão aprovadas ou não, de acordo com as regras de quebra
 Colaboradores:  Histórico, FileHandler, TelaSolicitacao
- 
