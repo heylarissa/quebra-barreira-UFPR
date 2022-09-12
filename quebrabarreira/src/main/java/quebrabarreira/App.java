@@ -9,13 +9,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        String gradePath = "./src/main/resources/grade2019.csv";
-        String historicoPath = "./src/main/resources/historicoaluno.csv";
+        // System.out.println( "Hello World!" );
+        // String gradePath = "./src/main/resources/grade2019.csv";
+        // String historicoPath = "./src/main/resources/historicoaluno.csv";
+// 
+        // AlunoController Aluno = new AlunoController();
+        // PedidoController Pedido = new PedidoController();
 
-        AlunoController Aluno = new AlunoController();
-        PedidoController Pedido = new PedidoController();
-
-        telaInicial.printAlunoInfo(Aluno);
+        new telaInicial();
     }
 }
