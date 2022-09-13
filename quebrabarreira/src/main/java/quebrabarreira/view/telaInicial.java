@@ -10,13 +10,14 @@ import quebrabarreira.controllers.AlunoController;
 public class telaInicial extends JFrame implements ActionListerner{
 
     private JButton BSolicitar, Binformacoes;
-    private JLabel L1,L2;
+    private JLabel L1,L2,L3;
     // Ver minhas informações
         // Redireciona para telaInfoAluno
     // public static void printAlunoInfo(AlunoController Aluno){
     //     System.out.print(Aluno);
     // }
     public telaInicial(){
+       
         setTitle("Tela Incial");
         setVisible(true);
         setSize(800,500);
@@ -26,21 +27,29 @@ public class telaInicial extends JFrame implements ActionListerner{
 
         setLayout(null);
 
+        L1 = new JLabel("Pedido de Quebra de Barreira do DINF ");
+        L1.setHorizontalTextPosition(JLabel.CENTER);
+        L1.setHorizontalTextPosition(JLabel.TOP);
+
+        add(L1);
+
         BSolicitar = new JButton("Solicitar");
         BSolicitar.setBounds(200, 250, 100, 70 );
+        BSolicitar.addActionListener(this);
         add(BSolicitar);
        
         Binformacoes = new JButton("Informações");
         Binformacoes.setBounds(200, 300, 100, 70 );
+        Binformacoes.addActionListener(this);
         add(Binformacoes);
         
         L1 = new JLabel("Solicitar a Quebra de barreira");
         L1.setBounds(100, 250, 100, 70 );
         add(L1);
 
-        L2 = new JLabel("Informações do Aluno");
-        L1.setBounds(100, 300, 100, 70 );
-        add(L1);
+        L3 = new JLabel("Informações do Aluno");
+        L3.setBounds(100, 300, 100, 70 );
+        add(L3);
     // Solicitar quebra de barreira
     }
 

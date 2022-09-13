@@ -1,6 +1,8 @@
 package quebrabarreira.view;
 
-public class telaSolicitacao {
+import javax.swing.JFrame;
+
+public class telaSolicitacao extends JFrame implements ActionListerner {
 
     public telaSolicitacao() {
     }
