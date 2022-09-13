@@ -3,7 +3,7 @@ package quebrabarreira.view;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class telaResultado extends JFrame implements ActionListerner{
+public class telaResultado extends JFrame /*implements ActionListerner*/{
 
     private JLabel nomeAluno,quantidadeMateria;
 
