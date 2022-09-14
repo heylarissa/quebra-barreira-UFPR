@@ -1,6 +1,8 @@
 package quebrabarreira.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class Pedido {
     String grr;
     String numeroPedido;
     List<String> materias;
+    List<String> resultado;
     public PedidoDAO dao;
     
     public Pedido(String grr, String numeroPedido, List<String> materias) {
@@ -32,31 +35,70 @@ public class Pedido {
         this.dao.readPedido();
     }
 
+
     public List<String> trataPedido(Historico historico) {
 
         List<List<String>> grade = this.dao.getGrades();
         
         // Ordena as materias por periodo
-        HashMap<String, Integer> gradePeriodo = new HashMap<>();
-        HashMap<String, Integer> materias = new HashMap<>();
-
-        for(List<String> mat: grade) {
-            gradePeriodo.put(mat.get(3), Integer.parseInt(mat.get(6)));
+        HashMap<String, Integer> gradePeriodo = new HashMap<>(); // Materia: Perido - Para toda a grade
+        final HashMap<String, Integer> materias = new HashMap<>(); // Materia: Periodo - Para as materias do pedido
+        
+        for(List<String> mat: grade) {            
+            if (mat.size() > 6) {
+                int periodo;
+                if (mat.get(6).equals("")) periodo = 10;
+                else periodo = Integer.parseInt(mat.get(6));   
+                
+                gradePeriodo.put(mat.get(3), periodo);
+            }
         }
-
+        
         for(String mat: this.materias) {
             materias.put(mat, gradePeriodo.get(mat));
         }
         
-        System.out.println(materias);
-
-        if (historico.getIra() > 0.8) {
-            return this.materias;
-        } else if (true) {
-
+        // List optativas
+        List<String> optativas = new ArrayList<>();
+        for (List<String> mat: grade) {
+            if (mat.size() > 8) {
+                if (mat.get(8).compareTo("Optativa") == 0) {
+                    optativas.add(mat.get(3));
+                }
+            }
         }
 
-        return this.materias;
+        // tudo isso para um sort
+        // Python Be like list.sort(key=lambda a, b: materias[a] - materias[b])
+        Collections.sort(this.materias, new Comparator<String>(){
+            public int compare(String item1, String item2){
+                int compare = materias.get(item1) - materias.get(item2);
+                if(compare == 0)
+                {  
+                    return (item1.compareTo(item2)); 
+                }
+                return compare;
+            }
+        });
+        // Java é verboso demais slc        
+
+        if (historico.getIra() >= 0.8) {
+            this.resultado = new ArrayList<>(this.materias);
+            return this.resultado;
+        
+        } else if (historico.getTaxaAprovacao() > (2/3)) {
+            this.resultado = new ArrayList<>(this.materias.subList(0, 5+1));
+            return this.resultado;
+        
+        } else if (historico.getTaxaAprovacao() > (1/2)) {
+            this.resultado = new ArrayList<>(this.materias.subList(0, 4+1));
+            return this.resultado;
+        
+        } else {
+            this.resultado = new ArrayList<>(this.materias.subList(0, 3+1));
+            return this.resultado;
+        }
+
     }
 
 }

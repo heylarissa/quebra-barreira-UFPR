@@ -25,25 +25,23 @@ public class App
 
         // telaInicial.printAlunoInfo(Aluno);
 
-        FileHandle handler = new FileHandle();
-        System.out.println(handler.readCsvFile("quebrabarreira/src/main/resources/historicoAluno.csv"));
         
-        // Historico historico = new Historico();
-        // historico.setIra(0.5);
+        Historico historico = new Historico();
+        historico.setIra(0.9);
+        historico.setTaxaAprovacao(0.5);
 
-        // List<String> materias = new ArrayList<>();
-        // materias.add("calc 2");
-        // materias.add("alg III");
-        // materias.add("SBB");
-        // materias.add("paradinhas do kapeta");
-        // Pedido pedido = new Pedido("GRR",
-        //                              "NUMERO", 
-        //                              materias);
-        // // pedido.savePedido();
-        // // pedido.readPedido();
-        // System.out.println(pedido.getMaterias());
+        List<String> materias = new ArrayList<>();
+        materias.add("CI1058");
+        materias.add("CI1057");
+        materias.add("CI1005");
+        materias.add("CI1062");
+        Pedido pedido = new Pedido("GRR",
+                                     "NUMERO", 
+                                     materias);
+        pedido.savePedido();
+        pedido.readPedido();
 
-        // pedido.trataPedido(historico);  
-
+        List<String> res = pedido.trataPedido(historico);  
+        System.out.println(res);
     }
 }

@@ -19,7 +19,7 @@ public class FileHandle {
          * Opens 'fileName' CSV file
          * returns a list of string lists with the ';' separated values
         */
-        File file= new File(fileName);
+        File file = new File(fileName);
 
         List<List<String>> lines = new ArrayList<>();
         Scanner inputStream;
@@ -27,8 +27,8 @@ public class FileHandle {
         try{
             inputStream = new Scanner(file);
 
-            while(inputStream.hasNext()){
-                String line= inputStream.nextLine();
+            while(inputStream.hasNextLine()){
+                String line = inputStream.nextLine();
                 String[] values = line.split(";");
                 lines.add(Arrays.asList(values));
             }
