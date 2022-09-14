@@ -4,69 +4,56 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TelaInicial extends JFrame /*implements ActionListener */{
+public class TelaInicial extends JFrame implements ActionListener {
 
-  private JButton BSolicitar, Binformacoes;
-  private JLabel L1;
+  private JButton BSolicitar, Binformacoes,Bimportar;
+  private JLabel Titulo;
 
-  // Ver minhas informações
-  // Redireciona para telaInfoAluno
-  // public static void printAlunoInfo(AlunoController Aluno){
-  // System.out.print(Aluno);
-  // }
+
   public void Tela_Inicial() {
 
     setTitle("Tela Incial");
-    setVisible(true);
-    setSize(700, 500);
+    setSize(500, 500);
+    this.setLayout(null);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setResizable(false);
     setLocationRelativeTo(null);
 
-    JPanel;
-    //JLabel label = new JLabel();
-    ///label.setText("Pedido de Quebra de Barreira do DINF ");
-    //L1.setHorizontalTextPosition(JLabel.CENTER);
+    Titulo = new JLabel();
+    Titulo.setText("Pedido de Quebra de Barreira do DINF ");
 
-    //label.setHorizontalTextPosition(JLabel.CENTER);
-    //label.setHorizontalTextPosition(JLabel.TOP);
-    //add(label);
-    
+    //Panel do titulo
+    JPanel panelTitulo = new JPanel();
+    panelTitulo.setBounds(120, 100, 270, 270);
+    panelTitulo.add(Titulo);
 
-    
-    //L1 = new JLabel("Pedido de Quebra de Barreira do DINF ");
-    //L1.setBounds(100, 100, 200, 200);
-
-    //L1.setHorizontalTextPosition(JLabel.CENTER);
-    //L1.setHorizontalTextPosition(JLabel.TOP);
-    //add(L1);
-    /* 
-    //System.out.println("add L1");
-
+    //Botoes da tela
     BSolicitar = new JButton("Solicitar");
-    BSolicitar.setBounds(200, 250, 100, 70);
-    // BSolicitar.addActionListener(this);
-    add(BSolicitar);
-
+    BSolicitar.addActionListener(this);
     Binformacoes = new JButton("Informações");
-    Binformacoes.setBounds(200, 300, 100, 70);
-    // Binformacoes.addActionListener(this);
-    add(Binformacoes);
+    Binformacoes.addActionListener(this);
+    Bimportar = new JButton("Importar Historico");
+    Bimportar.addActionListener(this);
 
-    L2 = new JLabel("Solicitar a Quebra de barreira");
-    L2.setBounds(100, 250, 100, 70);
-    add(L1);
+    //Panel de botoes
+    JPanel panelBotoes =  new JPanel();
+    panelBotoes.setBounds(150, 200, 200, 100);
+    panelBotoes.add(BSolicitar);
+    panelBotoes.add(Binformacoes);
+    panelBotoes.add(Bimportar);
 
-    L3 = new JLabel("Informações do Aluno");
-    L3.setBounds(100, 300, 100, 70);
-    add(L3);
-    // Solicitar quebra de barreira*/
+    setVisible(true);
+    this.add(panelTitulo);
+    this.add(panelBotoes);
+
   }
-
+  
   /*public void actionPerformed(ActionEvent e) {
     Object source = e.getSource();
     if (source == BSolicitar) {
@@ -76,11 +63,20 @@ public class TelaInicial extends JFrame /*implements ActionListener */{
     } else {
       return;
     }
-  }
-
-  @Override
-  public void actionPerformed(ActionEvent arg0) {
-    // TODO Auto-generated method stub
-    
   }*/
+  
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == BSolicitar) {
+      System.out.println("MATERIA");
+      telaSolicitacao solicitacao = new telaSolicitacao();
+      setVisible(false);
+    } else if  (e.getSource() == Binformacoes){
+      System.out.println("alunoo");
+    } else if  (e.getSource() == Bimportar){
+      System.out.println("historico");
+    }
+
+    
+  }
 }
