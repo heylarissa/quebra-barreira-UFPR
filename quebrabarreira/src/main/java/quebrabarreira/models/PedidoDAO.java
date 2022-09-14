@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PedidoDAO {
 
-    FileHandle ioHandler = new FileHandle();
+    public FileHandle ioHandler = new FileHandle();
     String basePath = "quebrabarreira/src/main/resources/";
     String pathExtension = ".csv";
     String path;
@@ -49,6 +49,24 @@ public class PedidoDAO {
 
         this.ioHandler.writeCsvFile(this.path, lines);
         return this.path;
+    }
+
+    public List<List<String>> getGrades() {
+        List<List<String>> materias2011 = new ArrayList<>();
+        List<List<String>> materias2019 = new ArrayList<>();
+
+        materias2011 = this.ioHandler.readCsvFile("quebrabarreira/src/main/resources/historicoAluno.csv");
+        materias2019 = this.ioHandler.readCsvFile("quebrabarreira/src/main/resources/historicoAluno.csv");
+
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        System.out.println("Materias");
+        System.out.println(materias2011);
+
+        materias2011 = materias2011.subList(2, materias2011.size());
+        materias2019 = materias2019.subList(2, materias2019.size());
+
+        materias2011.addAll(materias2019);
+        return materias2011;
     }
 
 }

@@ -6,6 +6,8 @@ import java.util.List;
 import quebrabarreira.controllers.AlunoController;
 import quebrabarreira.controllers.PedidoController;
 import quebrabarreira.models.Aluno;
+import quebrabarreira.models.FileHandle;
+import quebrabarreira.models.Historico;
 import quebrabarreira.models.Pedido;
 import quebrabarreira.models.PedidoDAO;
 import quebrabarreira.view.telaInicial;
@@ -22,17 +24,26 @@ public class App
         // PedidoController Pedido = new PedidoController();
 
         // telaInicial.printAlunoInfo(Aluno);
+
+        FileHandle handler = new FileHandle();
+        System.out.println(handler.readCsvFile("quebrabarreira/src/main/resources/historicoAluno.csv"));
         
-        List<String> materias = new ArrayList<>();
-        materias.add("calc 1");
-        materias.add("alg 1");
-        materias.add("SO");
-        materias.add("paradinhas");
-        Pedido pedido = new Pedido("GRR",
-                                     "NUMERO", 
-                                     materias);
-        pedido.savePedido();
-        pedido.readPedido();
-        System.out.println(pedido.getMaterias());
+        // Historico historico = new Historico();
+        // historico.setIra(0.5);
+
+        // List<String> materias = new ArrayList<>();
+        // materias.add("calc 2");
+        // materias.add("alg III");
+        // materias.add("SBB");
+        // materias.add("paradinhas do kapeta");
+        // Pedido pedido = new Pedido("GRR",
+        //                              "NUMERO", 
+        //                              materias);
+        // // pedido.savePedido();
+        // // pedido.readPedido();
+        // System.out.println(pedido.getMaterias());
+
+        // pedido.trataPedido(historico);  
+
     }
 }
