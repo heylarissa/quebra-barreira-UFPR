@@ -8,6 +8,7 @@ import java.util.List;
 import quebrabarreira.models.FileHandle;
 import quebrabarreira.models.aluno.curso.Disciplina;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
+import quebrabarreira.models.aluno.Aluno;
 
 public class AlunoDAO {
 
