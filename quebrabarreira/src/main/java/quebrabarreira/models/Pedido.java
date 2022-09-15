@@ -80,23 +80,25 @@ public class Pedido {
                 return compare;
             }
         });
+        // o ira esta na classe aluno agora
+        // if (historico.getIra() >= 0.8) {
+        //     this.resultado = new ArrayList<>(this.materias);
+        //     return this.resultado;
+        
+        // } else if (historico.getTaxaAprovacao() > (2/3)) {
+        //     this.resultado = new ArrayList<>(this.materias.subList(0, 5+1));
+        //     return this.resultado;
+        
+        // } else if (historico.getTaxaAprovacao() > (1/2)) {
+        //     this.resultado = new ArrayList<>(this.materias.subList(0, 4+1));
+        //     return this.resultado;
+        
+        // } else {
+        //     this.resultado = new ArrayList<>(this.materias.subList(0, 3+1));
+        //     return this.resultado;
+        // }
 
-        if (historico.getIra() >= 0.8) {
-            this.resultado = new ArrayList<>(this.materias);
-            return this.resultado;
-        
-        } else if (historico.getTaxaAprovacao() > (2/3)) {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 5+1));
-            return this.resultado;
-        
-        } else if (historico.getTaxaAprovacao() > (1/2)) {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 4+1));
-            return this.resultado;
-        
-        } else {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 3+1));
-            return this.resultado;
-        }
+        return this.resultado;
 
     }
     

@@ -12,6 +12,8 @@ public class Aluno {
     private List<HistoricoDisciplina> disciplinas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
+    private int taxaAprovacao;
+    private double ira;
 
     public Aluno() {
     }
@@ -28,9 +30,24 @@ public class Aluno {
         this.curso = curso;
         this.disciplinas = disciplinas;
     }
+    public double getIra() {
+        return this.ira;
+    }
+
+    public void setIra(double ira) {
+        this.ira = ira;
+    }
 
     public String getNome() {
         return nome;
+    }
+
+    public int getTaxaAprovacao(){
+        return this.taxaAprovacao;
+    }
+
+    public void setTaxaAprovacao(int taxaAprovacao){
+        this.taxaAprovacao = taxaAprovacao;
     }
 
     public void setNome(String novoNome) {

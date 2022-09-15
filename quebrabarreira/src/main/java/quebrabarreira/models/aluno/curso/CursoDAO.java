@@ -19,7 +19,7 @@ import quebrabarreira.Utils.FileHandle;
 
 public class CursoDAO {
 
-    public Curso lerGrade(int ano, String gradePath){
+    public Curso lerGrade(int ano, String gradePath) {
         Curso curso = new Curso();
         FileHandle file = new FileHandle();
 
@@ -27,11 +27,9 @@ public class CursoDAO {
 
         List<HashMap<String, String>> csvResult;
 
-
-
         csvResult = file.getCsv(gradePath);
 
-        for (HashMap<String,String> hashMap : csvResult) {
+        for (HashMap<String, String> hashMap : csvResult) {
             String codigoCurso = hashMap.get("COD_CURSO");
             curso.setCodigoCurso(codigoCurso);
 
@@ -39,15 +37,25 @@ public class CursoDAO {
             curso.setnomeCurso(nomeCurso);
 
             String nomeDisciplina = hashMap.get("NOME_DISCIPLINA");
-            //String horas = hashMap.get("NUM_HORAS");
+            String horas = hashMap.get("NUM_HORAS");
             String classificacao = hashMap.get("DESCR_ESTRUTURA");
-            //String periodo = hashMap.get("PERIODO_IDEAL");
+            String periodo = hashMap.get("PERIODO_IDEAL");
             String codigoDisciplina = hashMap.get("NOME_DISCIPLINA");
-            
-            int cargaHoraria = 0;//Integer.parseInt(horas);
-            int periodoIdeal = 0; //Integer.parseInt(periodo);
 
-            Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina, periodoIdeal, classificacao, cargaHoraria);
+            int cargaHoraria;
+            if (horas != null) {
+                cargaHoraria = Integer.parseInt(horas);
+            } else {
+                cargaHoraria = 0;
+            }
+
+            int periodoIdeal = 0;
+            if (periodo == "null") {
+                periodoIdeal = Integer.parseInt(periodo);
+            }
+
+            Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina, periodoIdeal, classificacao,
+                    cargaHoraria);
 
             disciplinasList.add(disciplina);
         }
