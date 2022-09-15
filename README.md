@@ -77,5 +77,4 @@ mvn exec:java
 ```
 
 ## TO DO LIST:
-    - Gerar .jar executável (algo com mvn package)
     - Redirecionar telas com SWING: [video aqui](https://www.youtube.com/watch?v=pO1SNvqk6sg)
