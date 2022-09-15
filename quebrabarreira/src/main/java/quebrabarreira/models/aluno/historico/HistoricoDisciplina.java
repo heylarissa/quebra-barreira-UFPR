@@ -14,14 +14,19 @@ public class HistoricoDisciplina {
     private int periodo;
     
     public HistoricoDisciplina (){}
-    // public Historico (Disciplina disciplina, int ano, int media, 
-    //                      int situacao, int periodo, int frequencia){
-    //     this.disciplina = disciplina;
-    //     this.ano = ano;
-    //     this.media = media;
-    //     this.periodo = periodo;
-    //     this.frequencia = frequencia;
-    // }
+    public HistoricoDisciplina ( Disciplina disciplina, 
+                                 int ano, 
+                                 int media, 
+                                 String situacao, 
+                                 int periodo, 
+                                 int frequencia){
+        this.disciplina = disciplina;
+        this.ano = ano;
+        this.media = media;
+        this.periodo = periodo;
+        this.frequencia = frequencia;
+        this.situacao = situacao;
+    }
 
     public void setPeriodo (int periodo){
         this.periodo = periodo;
@@ -58,13 +63,15 @@ public class HistoricoDisciplina {
         return this.media;
     }
 
-    public void setMedia (){}
+    public void setMedia (int media){
+        this.media = media;
+    }
 
     public Disciplina getDisciplina() {
         return this.disciplina;
     }
 
-    public void setDisciplinas(Disciplina disciplina) {
+    public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
 

@@ -1,14 +1,26 @@
 package quebrabarreira.controllers;
 
+import java.io.IOException;
+
 import quebrabarreira.models.aluno.Aluno;
+import quebrabarreira.models.aluno.AlunoDAO;
+import quebrabarreira.models.aluno.curso.Curso;
+import quebrabarreira.models.aluno.curso.CursoDAO;
 
 public class AlunoController {
     Aluno aluno;
-    private String historicoPath;
-    private String gradePath;
 
-    public void setAluno(Aluno aluno) {
-        // adicionar historico ao aluno
+    public AlunoController(int ano, String historicoFileName) throws IOException{
+        setAluno(AlunoDAO.lerHistorico(historicoFileName), ano);
+        
+    }
+
+    public void setAluno(Aluno aluno, int ano) {
+        
+        CursoDAO DAO = new CursoDAO();
+        Curso newCurso = DAO.lerGrade(ano);
+        aluno.setCurso(newCurso);
+
         this.aluno = aluno;
     }
 
@@ -16,20 +28,6 @@ public class AlunoController {
         return this.aluno;
     }
 
-    public void setHistoricoPath(String historicoPath) {
-        this.historicoPath = historicoPath;
-    }
 
-    public String getHistoricoPath() {
-        return this.historicoPath;
-    }
-
-    public String getGradePath() {
-        return gradePath;
-    }
-
-    public void setGradePath(String gradePath) {
-        this.gradePath = gradePath;
-    }
 
 }

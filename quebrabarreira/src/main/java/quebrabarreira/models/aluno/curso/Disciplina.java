@@ -9,14 +9,18 @@ public class Disciplina {
 
     public Disciplina(){}
 
-    // public Disciplina(String codigoDisciplina, String nomeDisciplina, int periodoIdeal, String classificacao,
-    //         int cargaHoraria) {
-    //     this.codigoDisciplina = codigoDisciplina;
-    //     this.nomeDisciplina = nomeDisciplina;
-    //     this.periodoIdeal = periodoIdeal;
-    //     this.classificacao = classificacao;
-    //     this.cargaHoraria = cargaHoraria;
-    // }
+    public Disciplina ( String codigoDisciplina, 
+                        String nomeDisciplina, 
+                        int periodoIdeal, 
+                        String classificacao,
+                        int cargaHoraria) {
+                            
+        this.codigoDisciplina = codigoDisciplina;
+        this.nomeDisciplina = nomeDisciplina;
+        this.periodoIdeal = periodoIdeal;
+        this.classificacao = classificacao;
+        this.cargaHoraria = cargaHoraria;
+    }
 
     public void setPeriodoIdeal(int periodoIdeal) {
         this.periodoIdeal = periodoIdeal;

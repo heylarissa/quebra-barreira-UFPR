@@ -18,12 +18,12 @@ import quebrabarreira.models.FileHandle;
 // 9 DESCR_SITUACAO
 
 public class CursoDAO {
-    public static Curso lerGrade(String path, int ano){
+
+    public Curso lerGrade(int ano){
         Curso curso = new Curso();
         FileHandle file = new FileHandle();
         String nameFile;
 
-        Disciplina disciplina = new Disciplina();
         List<Disciplina> disciplinasList = new ArrayList<Disciplina>();
 
         List<HashMap<String, String>> csvResult;
@@ -45,23 +45,16 @@ public class CursoDAO {
             String nomeCurso = hashMap.get("NOME_CURSO");
             curso.setnomeCurso(nomeCurso);
 
-            // lerDisciplina
             String nomeDisciplina = hashMap.get("NOME_DISCIPLINA");
-            disciplina.setNomeDisciplina(nomeDisciplina);
-
             String horas = hashMap.get("NUM_HORAS");
-            int cargaHoraria = Integer.parseInt(horas);
-            disciplina.setCargaHoraria(cargaHoraria);
-
             String classificacao = hashMap.get("DESCR_ESTRUTURA");
-            disciplina.setClassificacao(classificacao);
-
             String periodo = hashMap.get("PERIODO_IDEAL");
-            int periodoIdeal = Integer.parseInt(periodo);
-            disciplina.setPeriodoIdeal(periodoIdeal);
-
             String codigoDisciplina = hashMap.get("NOME_DISCIPLINA");
-            disciplina.setCodigoDisciplina(codigoDisciplina);
+            
+            int cargaHoraria = Integer.parseInt(horas);
+            int periodoIdeal = Integer.parseInt(periodo);
+
+            Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina, periodoIdeal, classificacao, cargaHoraria);
 
             disciplinasList.add(disciplina);
         }
