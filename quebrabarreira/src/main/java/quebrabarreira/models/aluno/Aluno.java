@@ -1,5 +1,6 @@
 package quebrabarreira.models.aluno;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import quebrabarreira.models.aluno.curso.Curso;
@@ -14,6 +15,7 @@ public class Aluno {
     private int ultimoPeriodoCursado;
     private int taxaAprovacao;
     private double ira;
+    private double iraUltimoPeriodo;
 
     public Aluno() {
     }
@@ -37,6 +39,15 @@ public class Aluno {
     public void setIra(double ira) {
         this.ira = ira;
     }
+
+    public double getIraUltimoPeriodo() {
+        return this.ira;
+    }
+
+    public void setIraUltimoPeriodo(double ira) {
+        this.ira = ira;
+    }
+
 
     public String getNome() {
         return nome;
@@ -89,9 +100,45 @@ public class Aluno {
     public void setUltimoPeriodoCursado(int ultimoPeriodoCursado){
         this.ultimoPeriodoCursado = ultimoPeriodoCursado;
     }
-
     public int getUltimoPeriodoCursado(){
-        return ultimoPeriodoCursado;
+        return this.ultimoPeriodoCursado;
+    }
+
+    public List<HistoricoDisciplina> getHistoricoUltimoPeriodoCursado(List<HistoricoDisciplina> disciplinas, int ultimoPeriodoCursado){
+        List<HistoricoDisciplina> ultimoPeriodoHistorico = new ArrayList<HistoricoDisciplina>();
+
+        for (HistoricoDisciplina disciplina : disciplinas) {
+            if (disciplina.getPeriodo() == this.getUltimoPeriodoCursado()){
+                ultimoPeriodoHistorico.add(disciplina);
+            }
+        }
+
+        return ultimoPeriodoHistorico;
+    }
+
+    public double calcularIRAUltimoPeriodo() {
+        double IRA=0;
+
+
+
+        return IRA;
+    }
+
+    public double calculateIra(){
+        double ira = 0;
+        double somatorioMedia = 0;
+        double cargaHorariaTotal = 0;
+        for (HistoricoDisciplina historicoDisciplina : this.disciplinas) {
+            if (historicoDisciplina.getFrequencia() != -1){ // desconsidera materias com situação MATRICULADO
+                somatorioMedia = somatorioMedia + historicoDisciplina.getMedia()*historicoDisciplina.getDisciplina().getCargaHoraria();
+                cargaHorariaTotal = cargaHorariaTotal + historicoDisciplina.getDisciplina().getCargaHoraria();
+            }
+
+        }
+        cargaHorariaTotal = cargaHorariaTotal * 100;
+
+        ira = somatorioMedia / cargaHorariaTotal;
+        return ira;
     }
 
 }

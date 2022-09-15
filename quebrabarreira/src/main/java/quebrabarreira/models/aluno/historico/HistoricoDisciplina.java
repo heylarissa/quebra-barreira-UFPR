@@ -5,7 +5,6 @@ import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class HistoricoDisciplina {
     private Disciplina disciplina;
-    private double taxaAprovacao;
     private int ano;
     private String situacao; // SITUACAO {aprovado, reprovado, matriculado}
     private int frequencia;
@@ -72,26 +71,6 @@ public class HistoricoDisciplina {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
-    }
-
-    public double getTaxaAprovacao() {
-        return this.taxaAprovacao;
-    }
-
-    public void setTaxaAprovacao(double taxaAprovacao) {
-        this.taxaAprovacao = taxaAprovacao;
-    }
-
-    public double calcularIRA() {
-        double somatorio = 0;
-        double cargaHorariaTotal = 0;
-        return somatorio / cargaHorariaTotal;
-    }
-
-    public double calcularIRAUltimoPeriodo() {
-
-        double IRA=0;
-        return IRA;
     }
 
     public double taxaAprovacao() {
