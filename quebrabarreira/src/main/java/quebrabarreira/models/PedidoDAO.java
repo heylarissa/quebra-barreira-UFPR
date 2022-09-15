@@ -3,6 +3,8 @@ package quebrabarreira.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import quebrabarreira.Utils.FileHandle;
+
 public class PedidoDAO {
 
     public FileHandle ioHandler = new FileHandle();

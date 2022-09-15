@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import quebrabarreira.models.FileHandle;
+import quebrabarreira.Utils.FileHandle;
 
 // 0 COD_CURSO
 // 1 NUM_VERSAO
@@ -19,24 +19,17 @@ import quebrabarreira.models.FileHandle;
 
 public class CursoDAO {
 
-    public Curso lerGrade(int ano){
+    public Curso lerGrade(int ano, String gradePath){
         Curso curso = new Curso();
         FileHandle file = new FileHandle();
-        String nameFile;
 
         List<Disciplina> disciplinasList = new ArrayList<Disciplina>();
 
         List<HashMap<String, String>> csvResult;
 
-        // setGradeYear
-        if (ano == 2019){
-            nameFile = "grade2019";
-        } 
-        else {
-            nameFile = "grade2011";
-        }
 
-        csvResult = file.getCsv(nameFile);
+
+        csvResult = file.getCsv(gradePath);
 
         for (HashMap<String,String> hashMap : csvResult) {
             String codigoCurso = hashMap.get("COD_CURSO");
@@ -46,13 +39,13 @@ public class CursoDAO {
             curso.setnomeCurso(nomeCurso);
 
             String nomeDisciplina = hashMap.get("NOME_DISCIPLINA");
-            String horas = hashMap.get("NUM_HORAS");
+            //String horas = hashMap.get("NUM_HORAS");
             String classificacao = hashMap.get("DESCR_ESTRUTURA");
-            String periodo = hashMap.get("PERIODO_IDEAL");
+            //String periodo = hashMap.get("PERIODO_IDEAL");
             String codigoDisciplina = hashMap.get("NOME_DISCIPLINA");
             
-            int cargaHoraria = Integer.parseInt(horas);
-            int periodoIdeal = Integer.parseInt(periodo);
+            int cargaHoraria = 0;//Integer.parseInt(horas);
+            int periodoIdeal = 0; //Integer.parseInt(periodo);
 
             Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina, periodoIdeal, classificacao, cargaHoraria);
 
@@ -60,9 +53,8 @@ public class CursoDAO {
         }
 
         curso.setGradeAno(ano);
-        System.out.println(curso.getCodigoCurso());
         curso.setDisciplinas(disciplinasList);
-                
+
         return curso;
     }
 }

@@ -10,13 +10,13 @@ public class HistoricoDisciplina {
     private int ano;
     private String situacao; // SITUACAO {aprovado, reprovado, matriculado}
     private int frequencia;
-    private int media;
+    private double media;
     private int periodo;
     
     public HistoricoDisciplina (){}
     public HistoricoDisciplina ( Disciplina disciplina, 
                                  int ano, 
-                                 int media, 
+                                 double media, 
                                  String situacao, 
                                  int periodo, 
                                  int frequencia){
@@ -59,11 +59,11 @@ public class HistoricoDisciplina {
         this.ano = ano;
     }
 
-    public int getMedia (){
+    public double getMedia (){
         return this.media;
     }
 
-    public void setMedia (int media){
+    public void setMedia (double media){
         this.media = media;
     }
 

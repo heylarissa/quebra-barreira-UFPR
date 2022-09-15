@@ -1,5 +1,5 @@
 quebrabarreira/models/aluno/curso/Disciplina.class
-quebrabarreira/models/FileHandle.class
+quebrabarreira/Utils/FileHandle.class
 quebrabarreira/models/Pedido.class
 quebrabarreira/models/aluno/AlunoDAO.class
 quebrabarreira/models/Pedido$1.class

@@ -10,15 +10,13 @@ import quebrabarreira.models.aluno.curso.CursoDAO;
 public class AlunoController {
     Aluno aluno;
 
-    public AlunoController(int ano, String historicoFileName) throws IOException{
-        setAluno(AlunoDAO.lerHistorico(historicoFileName), ano);
-        
+    public AlunoController(int ano, String historicoPath, String gradePath) throws IOException{
+        setAluno(AlunoDAO.lerHistorico(historicoPath), ano, gradePath);
     }
 
-    public void setAluno(Aluno aluno, int ano) {
-        
+    public void setAluno(Aluno aluno, int ano, String gradePath) {
         CursoDAO DAO = new CursoDAO();
-        Curso newCurso = DAO.lerGrade(ano);
+        Curso newCurso = DAO.lerGrade(ano, gradePath);
         aluno.setCurso(newCurso);
 
         this.aluno = aluno;
@@ -27,7 +25,5 @@ public class AlunoController {
     public Aluno getAluno() {
         return this.aluno;
     }
-
-
 
 }
