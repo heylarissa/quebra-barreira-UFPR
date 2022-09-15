@@ -10,7 +10,7 @@ public class telaInfoAluno extends JFrame {
     public telaInfoAluno() {
 
         setTitle("Aluno");
-        setSize(500, 500);
+        setSize(750, 500);
         this.setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -27,7 +27,9 @@ public class telaInfoAluno extends JFrame {
         panel2JPanel.setBounds(250,0,250,500);
         panel2JPanel.setBackground(Color.RED);
 
-
+        JPanel panel3JPanel =  new JPanel();
+        panel3JPanel.setBounds(500,0,250,500);
+        panel3JPanel.setBackground(Color.GREEN);
 
         //JPanel panelBotoes =  new JPanel();
         //panelBotoes.setBounds(150, 200, 200, 100);
@@ -36,8 +38,7 @@ public class telaInfoAluno extends JFrame {
         setVisible(true);
         this.add(panel1JPanel);
         this.add(panel2JPanel);
-
-
+        this.add(panel3JPanel);
 
     }
     

@@ -36,9 +36,9 @@ public class TelaInicial extends JFrame implements ActionListener {
     panelTitulo.add(Titulo);
 
     //Botoes da tela
-    BSolicitar = new JButton("Solicitar");
+    BSolicitar = new JButton("Solicitar Materia");
     BSolicitar.addActionListener(this);
-    Binformacoes = new JButton("Informações");
+    Binformacoes = new JButton("Informações do Aluno");
     Binformacoes.addActionListener(this);
     Bimportar = new JButton("Importar Historico");
     Bimportar.addActionListener(this);
@@ -55,17 +55,6 @@ public class TelaInicial extends JFrame implements ActionListener {
     this.add(panelBotoes);
 
   }
-  
-  /*public void actionPerformed(ActionEvent e) {
-    Object source = e.getSource();
-    if (source == BSolicitar) {
-      telaSolicitar();
-    } else if (source == Binformacoes) {
-      telaAluno();
-    } else {
-      return;
-    }
-  }*/
   
   @Override
   public void actionPerformed(ActionEvent e) {
