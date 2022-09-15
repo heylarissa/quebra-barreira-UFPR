@@ -15,4 +15,3 @@ quebrabarreira/view/telaResultado.class
 quebrabarreira/view/telaInfoAluno.class
 quebrabarreira/models/aluno/curso/CursoDAO.class
 quebrabarreira/models/aluno/historico/HistoricoDisciplina.class
-quebrabarreira/models/aluno/historico/HistoricoDisciplinaDAO.class

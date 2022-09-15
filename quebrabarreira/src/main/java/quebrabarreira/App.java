@@ -13,7 +13,7 @@ public class App
         System.out.println( "Hello World!" );
         String historicoFileName = "grade2019";
 
-        AlunoController aluno = new AlunoController(2019, historicoFileName);
+        
 
 
         // String gradePath = "./src/main/resources/grade2019.csv";
