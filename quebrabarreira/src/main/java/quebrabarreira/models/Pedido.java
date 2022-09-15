@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import quebrabarreira.models.aluno.historico.Historico;
+
 public class Pedido {
     String grr;
     String numeroPedido;
@@ -68,8 +70,6 @@ public class Pedido {
             }
         }
 
-        // tudo isso para um sort
-        // Python Be like list.sort(key=lambda a, b: materias[a] - materias[b])
         Collections.sort(this.materias, new Comparator<String>(){
             public int compare(String item1, String item2){
                 int compare = materias.get(item1) - materias.get(item2);
@@ -80,7 +80,6 @@ public class Pedido {
                 return compare;
             }
         });
-        // Java é verboso demais slc        
 
         if (historico.getIra() >= 0.8) {
             this.resultado = new ArrayList<>(this.materias);
@@ -100,5 +99,6 @@ public class Pedido {
         }
 
     }
+    
 
 }

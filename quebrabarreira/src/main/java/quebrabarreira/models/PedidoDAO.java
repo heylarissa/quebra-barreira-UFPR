@@ -40,7 +40,6 @@ public class PedidoDAO {
 
         List<List<String>> lines = new ArrayList<>();
 
-        // Que construção feia, queria uma list comprehension nessas horas
         for (String materia : pedido.getMaterias()) {
             List<String> l = new ArrayList<>();
             l.add(materia);

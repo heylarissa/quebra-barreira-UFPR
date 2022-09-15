@@ -1,6 +1,8 @@
-package quebrabarreira.models;
+package quebrabarreira.models.aluno;
 
 import java.util.List;
+
+import quebrabarreira.models.aluno.historico.Historico;
 
 public class Aluno {
     private String nome;
