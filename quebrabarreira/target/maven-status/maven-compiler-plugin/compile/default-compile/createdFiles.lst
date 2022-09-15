@@ -7,10 +7,11 @@ quebrabarreira/models/aluno/Aluno.class
 quebrabarreira/controllers/AlunoController.class
 quebrabarreira/models/PedidoDAO.class
 quebrabarreira/models/aluno/curso/Curso.class
+quebrabarreira/view/TelaInicial.class
 quebrabarreira/App.class
 quebrabarreira/controllers/PedidoController.class
-quebrabarreira/view/telaSolicitacao.class
 quebrabarreira/view/telaResultado.class
-quebrabarreira/view/telaInfoAluno.class
+quebrabarreira/view/telaSolicitacao.class
 quebrabarreira/models/aluno/curso/CursoDAO.class
+quebrabarreira/view/telaInfoAluno.class
 quebrabarreira/models/aluno/historico/HistoricoDisciplina.class
