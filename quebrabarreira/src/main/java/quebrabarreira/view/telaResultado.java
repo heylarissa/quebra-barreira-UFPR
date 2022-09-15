@@ -1,31 +1,33 @@
 package quebrabarreira.view;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class telaResultado extends JFrame /*implements ActionListerner*/{
 
-    private JLabel nomeAluno,quantidadeMateria;
 
     public telaResultado(){
+        
         setTitle("Resultado");
-        setVisible(true);
-        setSize(800,500);
+        setSize(500, 500);
+        this.setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
-        setLayout(null);
+        JPanel panel1JPanel =  new JPanel();
+        panel1JPanel.setBounds(0,0,250,500);
+        panel1JPanel.setBackground(Color.BLUE);
 
-        nomeAluno = new JLabel();
-        nomeAluno.setText("O aluno:");
+        JPanel panel2JPanel =  new JPanel();
+        panel2JPanel.setBounds(250,0,250,500);
+        panel2JPanel.setBackground(Color.RED);
 
-        quantidadeMateria = new JLabel();
-        quantidadeMateria.setText("Conseseguiu a quantidade de materias");
-
-        
-
-
+        setVisible(true);
+        this.add(panel1JPanel);
+        this.add(panel2JPanel);
 
     }
     

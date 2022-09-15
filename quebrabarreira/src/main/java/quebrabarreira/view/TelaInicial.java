@@ -1,6 +1,7 @@
 package quebrabarreira.view;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -9,6 +10,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class TelaInicial extends JFrame implements ActionListener {
 
@@ -67,14 +69,29 @@ public class TelaInicial extends JFrame implements ActionListener {
   
   @Override
   public void actionPerformed(ActionEvent e) {
+    
     if (e.getSource() == BSolicitar) {
       System.out.println("MATERIA");
       telaSolicitacao solicitacao = new telaSolicitacao();
       setVisible(false);
     } else if  (e.getSource() == Binformacoes){
       System.out.println("alunoo");
+      telaInfoAluno infoAluno = new telaInfoAluno();
+      setVisible(false);
     } else if  (e.getSource() == Bimportar){
+
       System.out.println("historico");
+
+      JFileChooser importarChooser = new JFileChooser();
+      importarChooser.setCurrentDirectory(new File("."));
+      int arq = importarChooser.showOpenDialog(null);
+
+      if (arq == JFileChooser.APPROVE_OPTION){
+        File fila = new File(importarChooser.getSelectedFile().getAbsolutePath());
+        System.out.println(fila);
+      }
+
+      
     }
 
     
