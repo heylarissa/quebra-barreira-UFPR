@@ -67,6 +67,7 @@ public class CursoDAO {
         }
 
         curso.setGradeAno(ano);
+        System.out.println(curso.getCodigoCurso());
         curso.setDisciplinas(disciplinasList);
                 
         return curso;

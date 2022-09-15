@@ -1,9 +1,9 @@
 package quebrabarreira.models.aluno.historico;
 
 import quebrabarreira.models.aluno.curso.Disciplina;
-import quebrabarreira.models.aluno.historico.Historico;
+import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
-public class Historico {
+public class HistoricoDisciplina {
     private Disciplina disciplina;
     private double ira;
     private double taxaAprovacao;
@@ -13,7 +13,7 @@ public class Historico {
     private int media;
     private int periodo;
     
-    public Historico (){}
+    public HistoricoDisciplina (){}
     // public Historico (Disciplina disciplina, int ano, int media, 
     //                      int situacao, int periodo, int frequencia){
     //     this.disciplina = disciplina;
@@ -89,10 +89,6 @@ public class Historico {
         double cargaHorariaTotal = 0;
         return somatorio / cargaHorariaTotal;
     }
-
-    // public List<Disciplina> historicosUltimoPeriodo() {
-    //     return this.disciplina;
-    // }
 
     public double calcularIRAUltimoPeriodo() {
 

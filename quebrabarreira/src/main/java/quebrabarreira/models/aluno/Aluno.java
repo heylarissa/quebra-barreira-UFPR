@@ -2,13 +2,13 @@ package quebrabarreira.models.aluno;
 
 import java.util.List;
 
-import quebrabarreira.models.aluno.historico.Historico;
+import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class Aluno {
     private String nome;
     private String grr;
     private String curso;
-    private List<Historico> disciplinas;
+    private List<HistoricoDisciplina> disciplinas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
 
@@ -39,11 +39,11 @@ public class Aluno {
         this.curso = newCurso;
     }
 
-    public List<Historico> getHistoricos() {
+    public List<HistoricoDisciplina> getHistoricos() {
         return disciplinas;
     }
 
-    public void setHistoricos(List<Historico> disciplinas) {
+    public void setHistoricos(List<HistoricoDisciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
 

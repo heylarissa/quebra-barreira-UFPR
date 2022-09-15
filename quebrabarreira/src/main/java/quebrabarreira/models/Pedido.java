@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-import quebrabarreira.models.aluno.historico.Historico;
+import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class Pedido {
     String grr;
@@ -38,7 +38,7 @@ public class Pedido {
     }
 
 
-    public List<String> trataPedido(Historico historico) {
+    public List<String> trataPedido(HistoricoDisciplina historico) {
 
         List<List<String>> grade = this.dao.getGrades();
         

@@ -7,7 +7,7 @@ import java.util.List;
 import quebrabarreira.models.FileHandle;
 import quebrabarreira.models.aluno.curso.*;
 
-public class HistoricoDAO {
+public class HistoricoDisciplinaDAO {
 // número de materias aprovadas no ultimo semestre
 //período atual
 //disciplina, periodo cursado, nota, IRA, lista de materias cursadas, matérias aprovadas no ultim. periodo,
