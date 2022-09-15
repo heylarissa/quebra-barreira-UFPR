@@ -14,8 +14,7 @@ Nome da Classe: Histórico
 Responsabilidades:  Relacionar aluno e disciplinas cursadas
 Colaboradores:  Aluno, Disciplina
 Atributos: número de materias aprovadas no ultimo semestre
-período atual
-disciplina, periodo cursado, nota, IRA, lista de materias cursadas, matérias aprovadas no ultim. periodo,
+período atual, disciplina, periodo cursado, nota, IRA, lista de materias cursadas, matérias aprovadas no ultim. periodo,
 
 # Arthur
 Nome da Classe: PedidoDAO
