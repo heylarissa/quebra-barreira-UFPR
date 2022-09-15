@@ -23,6 +23,21 @@ public class Historico {
     //     this.frequencia = frequencia;
     // }
 
+    public void setPeriodo (int periodo){
+        this.periodo = periodo;
+    }
+
+    public int getPeriodo(){
+        return this.periodo;
+    }
+
+    public int getFrequencia (){
+        return this.frequencia;
+    }
+
+    public void setFrequencia(int frequencia){
+        this.frequencia = frequencia;
+    }
     public void setSituacao (String situacao){
         this.situacao = situacao;
     }
