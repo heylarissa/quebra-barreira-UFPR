@@ -1,5 +1,5 @@
 quebrabarreira/models/aluno/curso/Disciplina.class
-quebrabarreira/models/FileHandle.class
+quebrabarreira/Utils/FileHandle.class
 quebrabarreira/models/Pedido.class
 quebrabarreira/models/aluno/AlunoDAO.class
 quebrabarreira/models/Pedido$1.class
@@ -10,8 +10,8 @@ quebrabarreira/models/aluno/curso/Curso.class
 quebrabarreira/view/TelaInicial.class
 quebrabarreira/App.class
 quebrabarreira/controllers/PedidoController.class
-quebrabarreira/view/telaResultado.class
 quebrabarreira/view/telaSolicitacao.class
-quebrabarreira/models/aluno/curso/CursoDAO.class
+quebrabarreira/view/telaResultado.class
 quebrabarreira/view/telaInfoAluno.class
+quebrabarreira/models/aluno/curso/CursoDAO.class
 quebrabarreira/models/aluno/historico/HistoricoDisciplina.class

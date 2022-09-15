@@ -5,18 +5,16 @@ import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class HistoricoDisciplina {
     private Disciplina disciplina;
-    private double ira;
-    private double taxaAprovacao;
     private int ano;
     private String situacao; // SITUACAO {aprovado, reprovado, matriculado}
     private int frequencia;
-    private int media;
+    private double media;
     private int periodo;
     
     public HistoricoDisciplina (){}
     public HistoricoDisciplina ( Disciplina disciplina, 
                                  int ano, 
-                                 int media, 
+                                 double media, 
                                  String situacao, 
                                  int periodo, 
                                  int frequencia){
@@ -59,11 +57,11 @@ public class HistoricoDisciplina {
         this.ano = ano;
     }
 
-    public int getMedia (){
+    public double getMedia (){
         return this.media;
     }
 
-    public void setMedia (int media){
+    public void setMedia (double media){
         this.media = media;
     }
 
@@ -73,34 +71,6 @@ public class HistoricoDisciplina {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
-    }
-
-    public double getIra() {
-        return this.ira;
-    }
-
-    public void setIra(double ira) {
-        this.ira = ira;
-    }
-
-    public double getTaxaAprovacao() {
-        return this.taxaAprovacao;
-    }
-
-    public void setTaxaAprovacao(double taxaAprovacao) {
-        this.taxaAprovacao = taxaAprovacao;
-    }
-
-    public double calcularIRA() {
-        double somatorio = 0;
-        double cargaHorariaTotal = 0;
-        return somatorio / cargaHorariaTotal;
-    }
-
-    public double calcularIRAUltimoPeriodo() {
-
-        double IRA=0;
-        return IRA;
     }
 
     public double taxaAprovacao() {

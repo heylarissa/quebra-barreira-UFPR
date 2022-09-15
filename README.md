@@ -61,7 +61,7 @@ C > 1/2 aprovação no sem. anterior
 
 **Comandos:**
 
-1. Criar o projeto:
+1. Criar o projeto (não é necessário):
 ```shell
 mvn archetype:generate
 ```

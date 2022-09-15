@@ -1,4 +1,4 @@
-package quebrabarreira.models;
+package quebrabarreira.Utils;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -14,12 +14,14 @@ import java.util.HashMap;
 
 public class FileHandle {
 
-    public List<List<String>> readCsvFile(String fileName) {
+    public FileHandle(){}
+
+    public List<List<String>> readCsvFile(String filePath) {
         /*
          * Opens 'fileName' CSV file
          * returns a list of string lists with the ';' separated values
         */
-        File file = new File(fileName);
+        File file = new File(filePath);
 
         List<List<String>> lines = new ArrayList<>();
         Scanner inputStream;
@@ -41,13 +43,13 @@ public class FileHandle {
         return lines;
     }
 
-    public void writeCsvFile(String fileName, List<List<String>> lines) {
+    public void writeCsvFile(String filePath, List<List<String>> lines) {
         /*
          * Writes to fileName the contents of the list of string lists 'lines'
         */
         
         try{
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            PrintWriter writer = new PrintWriter(filePath, "UTF-8");
             for(List<String> line: lines) {
                 writer.println(String.join(";", line));
             }
@@ -62,13 +64,13 @@ public class FileHandle {
         
     }
 
-    public List<HashMap<String, String>> getCsv(String fileName) {
+    public List<HashMap<String, String>> getCsv(String filePath) {
         /*
          * Returns the content of fileName CSV file 
          * on the form of a list of HashMaps with the correct header
         */
 
-        List<List<String>> lines = this.readCsvFile(fileName);
+        List<List<String>> lines = this.readCsvFile(filePath);
         List<HashMap<String, String>> csvResults = new ArrayList<>();
 
         List<String> header = lines.get(0);
