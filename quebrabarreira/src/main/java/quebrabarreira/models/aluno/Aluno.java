@@ -212,9 +212,6 @@ public class Aluno {
 
     public void calcMateriasBarreira() {
 
-        System.out.println(this.curso.getDisciplinas());
-        System.out.println(this.historico);
-
         this.materiasQueFaltaNaBarreira = new ArrayList<>();
         for(Disciplina disc: this.curso.getDisciplinas()) {
             if (disc.getPeriodoIdeal() <= 3) {
@@ -226,7 +223,6 @@ public class Aluno {
             }
         }
 
-        System.out.println(this.materiasQueFaltaNaBarreira);
     }
 
 }
