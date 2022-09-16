@@ -40,7 +40,8 @@ public class CursoDAO {
             String horas = hashMap.get("NUM_HORAS");
             String classificacao = hashMap.get("DESCR_ESTRUTURA");
             String periodo = hashMap.get("PERIODO_IDEAL");
-            String codigoDisciplina = hashMap.get("NOME_DISCIPLINA");
+            String codigoDisciplina = hashMap.get("COD_DISCIPLINA");
+            String tipoGrade = hashMap.get("NUM_VERSAO");
 
             int cargaHoraria;
             if (horas != null) {
@@ -55,7 +56,7 @@ public class CursoDAO {
             }
 
             Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina, periodoIdeal, classificacao,
-                    cargaHoraria);
+                    cargaHoraria, tipoGrade);
 
             disciplinasList.add(disciplina);
         }

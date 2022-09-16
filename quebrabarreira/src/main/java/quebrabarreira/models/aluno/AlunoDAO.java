@@ -25,17 +25,17 @@ public class AlunoDAO {
 
         csvResult = file.getCsv(historicoPath);
 
-        int cargaHorariaTotal = 0;
 
         for (HashMap<String, String> hash : csvResult) {
             String codigoDisciplina = hash.get("COD_ATIV_CURRIC");
             String nomeDisciplina = hash.get("NOME_ATIV_CURRIC");
 
             String classificacao = hash.get("DESCR_ESTRUTURA");
+            String versaoGrade = hash.get("NUM_VERSAO");
             int cargaHoraria = Integer.parseInt(hash.get("CH_TOTAL"));
             Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina,
                     -1, // periodo ideal - inexistente no arquivo de histórico, SOMENTE NA GRADE
-                    classificacao, cargaHoraria);
+                    classificacao, cargaHoraria, versaoGrade);
 
             String anoString = hash.get("ANO");
             int ano = Integer.parseInt(anoString);
@@ -71,8 +71,6 @@ public class AlunoDAO {
 
             historicoAlunoList.add(historico);
         }
-
-        System.out.println(cargaHorariaTotal);
 
         aluno.setHistoricos(historicoAlunoList);
 

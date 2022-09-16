@@ -37,10 +37,14 @@ public class AlunoController {
         // double iraUltimo = aluno.calcularIRAUltimoPeriodo();
         // aluno.setIraUltimoPeriodo(iraUltimo);
         
+        aluno.calcMateriasBarreira();
+        
         aluno.setUltimoPeriodoDisciplinas(aluno.historicosUltimoPeriodo());
         double taxa = aluno.calcularTaxaAprovacaoUltimoPeriodo(aluno.getUltimoPeriodoDisciplinas());
         aluno.setTaxaAprovacaoUltimoPeriodo(taxa);
         this.aluno = aluno;
+
+
     }
 
     public Aluno getAluno() {

@@ -3,6 +3,8 @@ package quebrabarreira.models.aluno;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.loading.PrivateClassLoader;
+
 import quebrabarreira.models.aluno.curso.Curso;
 import quebrabarreira.models.aluno.curso.Disciplina;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
@@ -13,10 +15,12 @@ public class Aluno {
     private Curso curso;
     private List<HistoricoDisciplina> historico;
     private List<HistoricoDisciplina> ultimoPeriodoDisciplinas;
+    private List<Disciplina> materiasQueFaltaNaBarreira;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
     private double taxaAprovacaoUltimoPeriodo;
     private double ira;
+
     // private double iraUltimoPeriodo;
 
     public Aluno() {
@@ -173,7 +177,7 @@ public class Aluno {
 
         taxa = aprovadas / matriculadas;
 
-        return taxa * 100;
+        return taxa*100;
     }
 
     public List<Disciplina> OfertadasNoSemestreNaoConcluidas() {;
@@ -207,6 +211,26 @@ public class Aluno {
 
         return lista;
     }
+
+    public void calcMateriasBarreira() {
+
+        System.out.println(this.curso.getDisciplinas());
+        System.out.println(this.historico);
+
+        this.materiasQueFaltaNaBarreira = new ArrayList<>();
+        for(Disciplina disc: this.curso.getDisciplinas()) {
+            if (disc.getPeriodoIdeal() <= 3) {
+                for (HistoricoDisciplina hist: this.historico) {
+                    if (disc.getCodigoDisciplina().equals(hist.getDisciplina().getCodigoDisciplina())) {
+                        this.materiasQueFaltaNaBarreira.add(hist.getDisciplina());
+                    }
+                }
+            }
+        }
+
+        System.out.println(this.materiasQueFaltaNaBarreira);
+    }
+
 
     // public double calcularIRAUltimoPeriodo() {
     // double ultimoIra;
