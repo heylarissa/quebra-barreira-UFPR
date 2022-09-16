@@ -24,13 +24,13 @@ public class App
         AlunoController aluno = new AlunoController(ano, historicoPath, gradePath);
 
         // tela info aluno
-        System.out.println(aluno.getAluno().getGRR());
-        System.out.println(aluno.getAluno().getNome());
-        System.out.println(aluno.getAluno().getIra());
-        System.out.println(aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
-        System.out.println(aluno.getAluno().getUltimoAnoCursado());
-        System.out.println(aluno.getAluno().getUltimoPeriodoCursado());
-        System.out.println(aluno.getAluno().calcularIRAUltimoPeriodo());
+        System.out.println("GRR " + aluno.getAluno().getGRR());
+        System.out.println("NOME " + aluno.getAluno().getNome());
+        System.out.println("IRA " + aluno.getAluno().getIra());
+        System.out.println("ULTIMO PERIODO TAXA APROV " + aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
+        System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
+        System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
+        System.out.println("ULTIMO PERIODO IRA " + aluno.getAluno().getIraUltimoPeriodo());
         
         // PedidoController Pedido = new PedidoController();
 

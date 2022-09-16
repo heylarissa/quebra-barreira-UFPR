@@ -11,7 +11,7 @@ import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 import quebrabarreira.models.aluno.Aluno;
 
 public class AlunoDAO {
-
+    Aluno aluno;
     /*
      * Traz informação do histórico para o objeto Aluno
      */
@@ -25,10 +25,7 @@ public class AlunoDAO {
 
         csvResult = file.getCsv(historicoPath);
 
-        double ira = 0;
         int cargaHorariaTotal = 0;
-
-        int ultimoPeriodo = -1;
 
         for (HashMap<String, String> hash : csvResult) {
             String codigoDisciplina = hash.get("COD_ATIV_CURRIC");
@@ -59,7 +56,7 @@ public class AlunoDAO {
             try {
                 frequencia = Integer.parseInt(hash.get("FREQUENCIA"));
             } catch (Exception e) {
-                frequencia = -1;
+                frequencia = -1; // o aluno nao cursou ainda, está Matriculado
             }
 
             HistoricoDisciplina historico = new HistoricoDisciplina(disciplina,
@@ -73,20 +70,11 @@ public class AlunoDAO {
             aluno.setGRR(hash.get("MATR_ALUNO"));
 
             historicoAlunoList.add(historico);
-            // Determina qual foi o ultimo periodo em que o aluno cursou ao menos uma
-            // matéria
-            if (periodo > ultimoPeriodo) {
-                ultimoPeriodo = historico.getPeriodo();
-            }
         }
 
         System.out.println(cargaHorariaTotal);
 
         aluno.setHistoricos(historicoAlunoList);
-        ira = aluno.calculateIra();
-        aluno.setIra(ira);
-        aluno.setUltimoPeriodoCursado(ultimoPeriodo);
-        aluno.setIraUltimoPeriodo(aluno.calcularIRAUltimoPeriodo());
 
         return aluno;
     }

@@ -13,7 +13,7 @@ public class Aluno {
     private List<HistoricoDisciplina> disciplinas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
-    private int taxaAprovacao;
+    private double taxaAprovacaoUltimoPeriodo;
     private double ira;
     private double iraUltimoPeriodo;
 
@@ -53,12 +53,12 @@ public class Aluno {
         return nome;
     }
 
-    public int getTaxaAprovacaoUltimoPeriodo() {
-        return this.taxaAprovacao;
+    public double getTaxaAprovacaoUltimoPeriodo() {
+        return this.taxaAprovacaoUltimoPeriodo;
     }
 
-    public void setTaxaAprovacaoUltimoPeriodo(int taxaAprovacao) {
-        this.taxaAprovacao = taxaAprovacao;
+    public void setTaxaAprovacaoUltimoPeriodo(double taxaAprovacao) {
+        this.taxaAprovacaoUltimoPeriodo = taxaAprovacao;
     }
 
     public void setNome(String novoNome) {
@@ -105,37 +105,8 @@ public class Aluno {
         return this.ultimoPeriodoCursado;
     }
 
-    public List<HistoricoDisciplina> HistoricoUltimoPeriodoCursado(List<HistoricoDisciplina> disciplinas,
-            int ultimoPeriodoCursado) {
-        List<HistoricoDisciplina> ultimoPeriodoHistorico = new ArrayList<HistoricoDisciplina>();
-
-        for (HistoricoDisciplina disciplina : disciplinas) {
-            if (disciplina.getPeriodo() == this.getUltimoPeriodoCursado()) {
-                ultimoPeriodoHistorico.add(disciplina);
-            }
-        }
-
-        return ultimoPeriodoHistorico;
-    }
-
-    public double calcularIRAUltimoPeriodo() {
-        double ira;
-        double somatorioMedia = 0;
-        double cargaHorariaTotal = 0;
-        List<HistoricoDisciplina> historico = HistoricoUltimoPeriodoCursado(disciplinas, ultimoPeriodoCursado);
-
-        for (HistoricoDisciplina disciplina : historico) {
-            somatorioMedia = somatorioMedia + disciplina.getMedia() * disciplina.getDisciplina().getCargaHoraria();
-            cargaHorariaTotal = cargaHorariaTotal + disciplina.getDisciplina().getCargaHoraria();
-        }
-
-        cargaHorariaTotal = cargaHorariaTotal * 100;
-        ira = somatorioMedia / cargaHorariaTotal;
-        return ira;
-    }
-
     public double calculateIra() {
-        double ira;
+        double iraTotal;
         double somatorioMedia = 0;
         double cargaHorariaTotal = 0;
         for (HistoricoDisciplina historicoDisciplina : this.disciplinas) {
@@ -147,8 +118,68 @@ public class Aluno {
         }
 
         cargaHorariaTotal = cargaHorariaTotal * 100;
-        ira = somatorioMedia / cargaHorariaTotal;
-        return ira;
+        iraTotal = somatorioMedia / cargaHorariaTotal;
+        return iraTotal;
+    }
+
+    public double calcularTaxaAprovacaoUltimoPeriodo() {
+        double taxa;
+        int aprovadas = 0;
+        int matriculadas = 0;
+
+        for (HistoricoDisciplina historicoDisciplina : historicosUltimoPeriodo()) {
+            if (historicoDisciplina.getFrequencia() != -1 & historicoDisciplina.getSituacao() == "Aprovado") { 
+                aprovadas++;
+            }
+            matriculadas++;
+        }
+
+        taxa = aprovadas / matriculadas;
+
+        return taxa;
+    }
+
+    public List<HistoricoDisciplina> historicosUltimoPeriodo() {
+        List<HistoricoDisciplina> historicoUltimoPeriodo = new ArrayList<>();
+
+        for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
+            if (historicoDisciplina.getPeriodo() == this.getUltimoPeriodoCursado()
+                    && historicoDisciplina.getFrequencia() != -1) {
+                historicoUltimoPeriodo.add(historicoDisciplina);
+            }
+        }
+
+        return historicoUltimoPeriodo;
+    }
+
+    public double calcularIRAUltimoPeriodo() {
+        double ultimoIra;
+        double somatorioMedia = 0;
+        double cargaHorariaTotal = 0;
+
+        for (HistoricoDisciplina historicoDisciplina : this.historicosUltimoPeriodo()) {
+            if (historicoDisciplina.getFrequencia() != -1) { // desconsidera materias com situação MATRICULADO
+                somatorioMedia = somatorioMedia
+                        + historicoDisciplina.getMedia() * historicoDisciplina.getDisciplina().getCargaHoraria();
+                cargaHorariaTotal = cargaHorariaTotal + historicoDisciplina.getDisciplina().getCargaHoraria();
+            }
+        }
+        cargaHorariaTotal = cargaHorariaTotal * 100;
+        ultimoIra = somatorioMedia / cargaHorariaTotal;
+
+        return ultimoIra;
+    }
+
+    public int calculaUltimoPeriodo() {
+        int ultimoPeriodo = 0;
+
+        for (HistoricoDisciplina historicoDisciplina : disciplinas) {
+            if (historicoDisciplina.getPeriodo() > ultimoPeriodo & historicoDisciplina.getFrequencia() != -1) {
+                ultimoPeriodo = historicoDisciplina.getPeriodo();
+            }
+        }
+
+        return ultimoPeriodo;
     }
 
 }
