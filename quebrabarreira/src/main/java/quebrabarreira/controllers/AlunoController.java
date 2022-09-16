@@ -27,8 +27,7 @@ public class AlunoController {
         aluno.setCurso(newCurso);
 
         /* Calcula o IRA */
-        double ira = 0;
-        ira = aluno.calculateIra();
+        double ira = aluno.calculateIra();
         aluno.setIra(ira);
 
         /* Define o último periodo */
@@ -37,11 +36,6 @@ public class AlunoController {
 
         // double iraUltimo = aluno.calcularIRAUltimoPeriodo();
         // aluno.setIraUltimoPeriodo(iraUltimo);
-
-
-
-
-        
         
         aluno.setUltimoPeriodoDisciplinas(aluno.historicosUltimoPeriodo());
         double taxa = aluno.calcularTaxaAprovacaoUltimoPeriodo(aluno.getUltimoPeriodoDisciplinas());

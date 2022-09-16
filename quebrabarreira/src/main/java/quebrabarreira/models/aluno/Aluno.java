@@ -131,6 +131,18 @@ public class Aluno {
         return iraTotal;
     }
 
+    public int calculaUltimoPeriodo() {
+        int ultimoPeriodo = 0;
+
+        for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
+            if (historicoDisciplina.getPeriodo() > ultimoPeriodo & historicoDisciplina.getFrequencia() != -1) {
+                ultimoPeriodo = historicoDisciplina.getPeriodo();
+            }
+        }
+
+        return ultimoPeriodo;
+    }
+
     public List<HistoricoDisciplina> historicosUltimoPeriodo() {
         List<HistoricoDisciplina> historicoUltimoPeriodo = new ArrayList<>();
 
@@ -148,17 +160,18 @@ public class Aluno {
 
     public double calcularTaxaAprovacaoUltimoPeriodo(List<HistoricoDisciplina> hist) {
         double taxa;
-        int aprovadas = 0;
-        int matriculadas = 0;
+        double aprovadas = 0;
+        double matriculadas = 0;
 
         for (HistoricoDisciplina historicoDisciplina : hist) {
-            System.out.println(historicoDisciplina.getSituacao());
             if (historicoDisciplina.getMedia() > 70) {
-                System.out.print(aprovadas + "    " + historicoDisciplina.getSituacao() + "        " + historicoDisciplina.getMedia());
+                System.out.println(aprovadas + "    " + historicoDisciplina.getSituacao() + "        " + historicoDisciplina.getMedia());
                 aprovadas++;
             }
             matriculadas++;
         }
+
+        System.out.println(aprovadas + "  " + matriculadas);
 
         taxa = aprovadas / matriculadas;
 
@@ -185,17 +198,7 @@ public class Aluno {
     // return ultimoIra;
     // }
 
-    public int calculaUltimoPeriodo() {
-        int ultimoPeriodo = 0;
 
-        for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
-            if (historicoDisciplina.getPeriodo() > ultimoPeriodo & historicoDisciplina.getFrequencia() != -1) {
-                ultimoPeriodo = historicoDisciplina.getPeriodo();
-            }
-        }
-
-        return ultimoPeriodo;
-    }
 
     public List<HistoricoDisciplina> MateriasCursadas() {
         return disciplinas;
