@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import quebrabarreira.models.aluno.curso.Curso;
+import quebrabarreira.models.aluno.curso.Disciplina;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class Aluno {
     private String nome;
     private String grr;
     private Curso curso;
-    private List<HistoricoDisciplina> disciplinas;
+    private List<HistoricoDisciplina> historico;
     private List<HistoricoDisciplina> ultimoPeriodoDisciplinas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
@@ -27,11 +28,11 @@ public class Aluno {
         this.curso = curso;
     }
 
-    public Aluno(String nome, String grr, Curso curso, List<HistoricoDisciplina> disciplinas) {
+    public Aluno(String nome, String grr, Curso curso, List<HistoricoDisciplina> historico) {
         this.nome = nome;
         this.grr = grr;
         this.curso = curso;
-        this.disciplinas = disciplinas;
+        this.historico = historico;
     }
 
     public double getIra() {
@@ -83,11 +84,11 @@ public class Aluno {
     }
 
     public List<HistoricoDisciplina> getHistoricos() {
-        return disciplinas;
+        return historico;
     }
 
-    public void setHistoricos(List<HistoricoDisciplina> disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setHistoricos(List<HistoricoDisciplina> historico) {
+        this.historico = historico;
     }
 
     public void setUltimoAnoCursado(int ultimoAnoCursado) {
@@ -106,11 +107,11 @@ public class Aluno {
         return this.ultimoPeriodoCursado;
     }
 
-    public void setUltimoPeriodoDisciplinas (List<HistoricoDisciplina> disciplinasUltimoPeriodo){
+    public void setUltimoPeriodoDisciplinas(List<HistoricoDisciplina> disciplinasUltimoPeriodo) {
         this.ultimoPeriodoDisciplinas = disciplinasUltimoPeriodo;
     }
 
-    public List<HistoricoDisciplina> getUltimoPeriodoDisciplinas (){
+    public List<HistoricoDisciplina> getUltimoPeriodoDisciplinas() {
         return this.ultimoPeriodoDisciplinas;
     }
 
@@ -118,7 +119,7 @@ public class Aluno {
         double iraTotal;
         double somatorioMedia = 0;
         double cargaHorariaTotal = 0;
-        for (HistoricoDisciplina historicoDisciplina : this.disciplinas) {
+        for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
             if (historicoDisciplina.getFrequencia() != -1) { // desconsidera materias com situação MATRICULADO
                 somatorioMedia = somatorioMedia
                         + historicoDisciplina.getMedia() * historicoDisciplina.getDisciplina().getCargaHoraria();
@@ -165,17 +166,46 @@ public class Aluno {
 
         for (HistoricoDisciplina historicoDisciplina : hist) {
             if (historicoDisciplina.getMedia() > 70) {
-                System.out.println(aprovadas + "    " + historicoDisciplina.getSituacao() + "        " + historicoDisciplina.getMedia());
                 aprovadas++;
             }
             matriculadas++;
         }
 
-        System.out.println(aprovadas + "  " + matriculadas);
-
         taxa = aprovadas / matriculadas;
 
-        return taxa*100;
+        return taxa * 100;
+    }
+
+    public List<Disciplina> OfertadasNoSemestreNaoConcluidas() {;
+
+        List<Disciplina> grade = curso.getDisciplinas();
+        List<Disciplina> cursadas = new ArrayList<>();
+
+        /* HistoricoDisciplina para list<Disciplina> - para fins de comparacao*/ 
+        for (HistoricoDisciplina historicoDisciplina : historico) {
+            if (historicoDisciplina.getSituacao() == "Aprovado"){
+                cursadas.add(historicoDisciplina.getDisciplina());
+            }
+        }
+        
+        List<Disciplina> lista = new ArrayList<>();
+
+        for (Disciplina hist : grade) {
+            boolean naoCursado = true;
+
+            for (Disciplina disciplina : cursadas) {
+                if (hist.getCodigoDisciplina() == disciplina.getCodigoDisciplina()){
+                    naoCursado = false;
+                    break;
+                }
+            }
+
+            if (naoCursado){
+                lista.add(hist);
+            }
+        }
+
+        return lista;
     }
 
     // public double calcularIRAUltimoPeriodo() {
@@ -197,11 +227,5 @@ public class Aluno {
 
     // return ultimoIra;
     // }
-
-
-
-    public List<HistoricoDisciplina> MateriasCursadas() {
-        return disciplinas;
-    }
 
 }

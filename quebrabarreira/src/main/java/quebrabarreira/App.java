@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import quebrabarreira.controllers.AlunoController;
+import quebrabarreira.models.aluno.Aluno;
+import quebrabarreira.models.aluno.curso.Disciplina;
 // import quebrabarreira.controllers.PedidoController;
 // import quebrabarreira.view.TelaInicial;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
@@ -30,11 +32,9 @@ public class App {
         System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
         System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
 
-        for (HistoricoDisciplina disc : aluno.getAluno().getHistoricos()) {
-            if (disc.getSituacao() == "Aprovado") {
-                System.out.println(disc.getDisciplina().getCodigoDisciplina() + "   " + disc.getSituacao() + "     "
-                        + disc.getMedia());
-            }
+
+        for (Disciplina d : aluno.getAluno().OfertadasNoSemestreNaoConcluidas()) {
+            System.out.println(d.getCodigoDisciplina() + "      " + d.getNomeDisciplina());
         }
         // System.out.println("ULTIMO PERIODO IRA " +
         // aluno.getAluno().getIraUltimoPeriodo());
