@@ -234,7 +234,7 @@ public class InterfaceGrafica {
         tableHeader.setBackground(Color.decode("#AED8E6"));
 
         // for (int i = 0; i < col; i++) {
-        //     List<Disciplina> materiasCursadas = aluno.materiasCursadasBarreira();
+        //     List<Disciplina> materiasCursadas = aluno.materiasQueFaltaNaBarreira();
         //     List<Disciplina> materiasPeriodo = aluno.materiasPeriodo(i + 1);
         //     int j = 0;
         //     for (Disciplina materia : materiasPeriodo) {
@@ -265,65 +265,65 @@ public class InterfaceGrafica {
         // ScrollPane.setPreferredSize(new Dimension(d.width, discTable.getRowHeight() * 6));
         // panel4.add(ScrollPane, constraints);
 
-        // JPanel panell5 = addPanel(0, 4, panel, new GridLayout(1, 1));
-        // String legenda = "(A): Aprovado (R): Reprovado (M): Matriculado no período vigente";
-        // JLabel tLegenda = addLabel(0, 0, false, legenda, panell5);
+        JPanel panell5 = addPanel(0, 4, panel, new GridLayout(1, 1));
+        String legenda = "(A): Aprovado (R): Reprovado (M): Matriculado no período vigente";
+        JLabel tLegenda = addLabel(0, 0, false, legenda, panell5);
 
-        // JPanel panel6 = addPanel(0, 5, panel, new GridLayout(1, 1));
-        // String textoCondicoes = "Tem condições de se matricular nesta disciplina, "
-        //         + "sem colisão de horários com as disciplinas faltantes, "
-        //         + "possuindo condições de finalizar as atividades formativas "
-        //         + "complementares seguindo as regras vigentes do seu curso?";
+        JPanel panel6 = addPanel(0, 5, panel, new GridLayout(1, 1));
+        String textoCondicoes = "Tem condições de se matricular nesta disciplina, "
+                + "sem colisão de horários com as disciplinas faltantes, "
+                + "possuindo condições de finalizar as atividades formativas "
+                + "complementares seguindo as regras vigentes do seu curso?";
 
-        // JTextArea condicoes = addTextArea(0, 0, textoCondicoes, panel6, false);
+        JTextArea condicoes = addTextArea(0, 0, textoCondicoes, panel6, false);
 
-        // JPanel panel7 = addPanel(0, 6, panel, new GridLayout(1, 1));
-        // JCheckBox radioButtonCondicoes1 = addRadioButton(0, 0, "Sim", panel7);
+        JPanel panel7 = addPanel(0, 6, panel, new GridLayout(1, 1));
+        JCheckBox radioButtonCondicoes1 = addRadioButton(0, 0, "Sim", panel7);
 
-        // JPanel panel8 = addPanel(0, 7, panel, new GridLayout(1, 1));
-        // String textoDisciplina = "Quantas disciplinas você ainda precisa cursar, incluindo as da próxima matrícula?";
-        // JLabel nDisciplinas = addLabel(0, 9, true, textoDisciplina, panel8);
+        JPanel panel8 = addPanel(0, 7, panel, new GridLayout(1, 1));
+        String textoDisciplina = "Quantas disciplinas você ainda precisa cursar, incluindo as da próxima matrícula?";
+        JLabel nDisciplinas = addLabel(0, 9, true, textoDisciplina, panel8);
 
-        // JPanel panel9 = addPanel(0, 8, panel, new GridLayout(1, 2));
-        // JPanel panelDisciplinas = addPanel(0, 0, panel9, new GridLayout(2, 1));
-        // JLabel nObrigatorias = addLabel(0, 0, false, "Obrigatórias:", panelDisciplinas);
-        // JTextField tObrigatorias = addTextField(0, 1, panelDisciplinas);
+        JPanel panel9 = addPanel(0, 8, panel, new GridLayout(1, 2));
+        JPanel panelDisciplinas = addPanel(0, 0, panel9, new GridLayout(2, 1));
+        JLabel nObrigatorias = addLabel(0, 0, false, "Obrigatórias:", panelDisciplinas);
+        JTextField tObrigatorias = addTextField(0, 1, panelDisciplinas);
 
-        // JPanel panelDisciplinasOpt = addPanel(1, 0, panel9, new GridLayout(2, 1));
-        // JLabel nOpt = addLabel(0, 0, false, "Optativas:", panelDisciplinasOpt);
-        // JTextField tOpt = addTextField(0, 1, panelDisciplinasOpt);
+        JPanel panelDisciplinasOpt = addPanel(1, 0, panel9, new GridLayout(2, 1));
+        JLabel nOpt = addLabel(0, 0, false, "Optativas:", panelDisciplinasOpt);
+        JTextField tOpt = addTextField(0, 1, panelDisciplinasOpt);
 
-        // JPanel panel10 = addPanel(0, 9, panel, new GridLayout(1, 1));
-        // String textoDisciplina2 = "Quais disciplinas você solicita além da barreira?";
-        // JLabel discSolicitadas = addLabel(0, 11, true, textoDisciplina2, panel10);
+        JPanel panel10 = addPanel(0, 9, panel, new GridLayout(1, 1));
+        String textoDisciplina2 = "Quais disciplinas você solicita além da barreira?";
+        JLabel discSolicitadas = addLabel(0, 11, true, textoDisciplina2, panel10);
 
-        // JPanel panel11 = addPanel(0, 10, panel, new GridLayout(1, 1));
-        // constraints.anchor = GridBagConstraints.CENTER;
-        // constraints.gridwidth = GridBagConstraints.REMAINDER;
-        // constraints.fill = GridBagConstraints.HORIZONTAL;
-        // constraints.insets = new Insets(4, 0, 10, 4);
-        // constraints.gridx = 0;
-        // constraints.gridy = 0;
+        JPanel panel11 = addPanel(0, 10, panel, new GridLayout(1, 1));
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.gridwidth = GridBagConstraints.REMAINDER;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(4, 0, 10, 4);
+        constraints.gridx = 0;
+        constraints.gridy = 0;
 
-        // int n2 = 5;
-        // JTable discSolicitadasTable = new JTable(n2, n2);
-        // for (int i = 0; i < n2; i++) {
-        //     for (int j = 0; j < n2; j++) {
-        //         discSolicitadasTable.isCellEditable(i, j);
-        //     }
-        // }
+        int n2 = 5;
+        JTable discSolicitadasTable = new JTable(n2, n2);
+        for (int i = 0; i < n2; i++) {
+            for (int j = 0; j < n2; j++) {
+                discSolicitadasTable.isCellEditable(i, j);
+            }
+        }
 
-        // discSolicitadasTable.setBorder(BorderFactory.createLineBorder(Color.black));
-        // discSolicitadasTable.setRowHeight(discTable.getRowHeight() + 8);
-        // discSolicitadasTable.setCellSelectionEnabled(true);
-        // discSolicitadasTable.setBackground(null);
-        // panel11.add(discSolicitadasTable, constraints);
+        discSolicitadasTable.setBorder(BorderFactory.createLineBorder(Color.black));
+        discSolicitadasTable.setRowHeight(discTable.getRowHeight() + 8);
+        discSolicitadasTable.setCellSelectionEnabled(true);
+        discSolicitadasTable.setBackground(null);
+        panel11.add(discSolicitadasTable, constraints);
 
-        // JPanel panel13 = addPanel(0, 10, panel, new GridLayout(2, 1));
-        // JLabel pedido = addLabel(0, 0, true, "Justifique seu pedido:", panel13);
-        // JTextArea tpedido = addTextArea(0, 1, "", panel13, true);
+        JPanel panel13 = addPanel(0, 10, panel, new GridLayout(2, 1));
+        JLabel pedido = addLabel(0, 0, true, "Justifique seu pedido:", panel13);
+        JTextArea tpedido = addTextArea(0, 1, "", panel13, true);
 
-        // JPanel panel14 = addPanel(0, 11, panel, new GridLayout(1, 3));
+        JPanel panel14 = addPanel(0, 11, panel, new GridLayout(1, 3));
 
         // JButton buttonRecover = addButton(0, 0, "Recuperar", panel14);
         // buttonRecover.addActionListener(new ActionListener() {
