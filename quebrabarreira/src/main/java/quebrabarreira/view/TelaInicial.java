@@ -77,6 +77,8 @@ public class TelaInicial extends JFrame implements ActionListener {
 
     JFrame proxTela;
     
+    JFrame proxTela;
+    
     if (e.getSource() == BSolicitar) {
 
       proxTela = telaSolicitacao.getInstance();

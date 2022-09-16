@@ -7,8 +7,8 @@ import quebrabarreira.controllers.PedidoController;
 import quebrabarreira.view.InterfaceGrafica;
 import quebrabarreira.view.TelaInicial;
 
-//import quebrabarreira.controllers.PedidoController;
-//import quebrabarreira.view.telaInicial;
+public class App {
+    public static void main(String[] args) throws IOException {
 
 public class App 
 {
@@ -38,15 +38,15 @@ public class App
         // result = file.getCsv(gradePath);
 
         // for (HashMap<String,String> hashMap : result) {
-        //     System.out.println(hashMap.get("PERIODO_IDEAL"));
-        //     System.out.println(hashMap.get("CH_TOTAL"));
-        //     System.out.println(hashMap.get("COD_DISCIPLINA"));
-        //     // System.out.println(hashMap.get("PERIODO"));
-        //     // System.out.println(hashMap.get("PERIODO"));
-        //     // System.out.println(hashMap.get("PERIODO"));
-        //     // System.out.println(hashMap.get("PERIODO"));
-        //     // System.out.println(hashMap.get("PERIODO"));
-        //     // System.out.println(hashMap.get("PERIODO"));
+        // System.out.println(hashMap.get("PERIODO_IDEAL"));
+        // System.out.println(hashMap.get("CH_TOTAL"));
+        // System.out.println(hashMap.get("COD_DISCIPLINA"));
+        // // System.out.println(hashMap.get("PERIODO"));
+        // // System.out.println(hashMap.get("PERIODO"));
+        // // System.out.println(hashMap.get("PERIODO"));
+        // // System.out.println(hashMap.get("PERIODO"));
+        // // System.out.println(hashMap.get("PERIODO"));
+        // // System.out.println(hashMap.get("PERIODO"));
 
         // }
         InterfaceGrafica.Invoke(aluno);

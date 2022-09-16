@@ -1,5 +1,5 @@
 COD_CURSO;NUM_VERSAO;DESCR_ESTRUTURA;COD_DISCIPLINA;NOME_UNIDADE;NOME_DISCIPLINA;PERIODO_IDEAL;TIPO_DISCIPLINA;CH_TOTAL;DESCR_SITUACAO
-;;;
+;;;;;;;;;
 21A;2019;Estágio Supervisionado Obrigatório;CI1100;Curso de Ciência da Computação - Bacharelado;ESTÁGIO OBRIGATÓRIO;null;Estágio Curricular;220;ATIVA
 21A;2019;Núcleo de Conteúdos obrigatórios;CE009;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À ESTATÍSTICA;3;Obrigatória;60;ATIVA
 21A;2019;Núcleo de Conteúdos obrigatórios;CI1001;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO I;2;Obrigatória;60;ATIVA

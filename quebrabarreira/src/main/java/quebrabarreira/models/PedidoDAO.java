@@ -8,14 +8,14 @@ import quebrabarreira.Utils.FileHandle;
 public class PedidoDAO {
 
     public FileHandle ioHandler = new FileHandle();
-    String basePath = "quebrabarreira/src/main/resources/";
+    String basePath = "./src/main/resources/";
     String pathExtension = ".csv";
     String path;
     Pedido pedido;
 
     public PedidoDAO(Pedido pedido) {
         this.pedido = pedido;
-        this.path = this.basePath + "Pedido" + pedido.getGrr() + pedido.getNumeroPedido() + this.pathExtension;
+        this.path = this.basePath + "Pedido" + pedido.getGrr() + this.pathExtension;
     }
 
     /**
@@ -56,8 +56,8 @@ public class PedidoDAO {
         List<List<String>> materias2011 = new ArrayList<>();
         List<List<String>> materias2019 = new ArrayList<>();
 
-        materias2011 = this.ioHandler.readCsvFile("quebrabarreira/src/main/resources/grade2011.csv");
-        materias2019 = this.ioHandler.readCsvFile("quebrabarreira/src/main/resources/grade2019.csv");
+        materias2011 = this.ioHandler.readCsvFile("./src/main/resources/grade2011.csv");
+        materias2019 = this.ioHandler.readCsvFile("./src/main/resources/grade2019.csv");
 
         materias2011 = materias2011.subList(2, materias2011.size());
         materias2019 = materias2019.subList(2, materias2019.size());
