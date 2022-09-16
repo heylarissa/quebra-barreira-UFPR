@@ -38,6 +38,39 @@ public class Aluno {
         this.historico = historico;
     }
 
+
+    public String getGrr() {
+        return this.grr;
+    }
+
+    public void setGrr(String grr) {
+        this.grr = grr;
+    }
+
+    public List<HistoricoDisciplina> getHistorico() {
+        return this.historico;
+    }
+
+    public void setHistorico(List<HistoricoDisciplina> historico) {
+        this.historico = historico;
+    }
+
+    public List<Disciplina> getMateriasQueFaltaNaBarreira() {
+        return this.materiasQueFaltaNaBarreira;
+    }
+
+    public void setMateriasQueFaltaNaBarreira(List<Disciplina> materiasQueFaltaNaBarreira) {
+        this.materiasQueFaltaNaBarreira = materiasQueFaltaNaBarreira;
+    }
+
+    public List<Disciplina> getOfertadasNoSemestreNaoConcluidas() {
+        return this.ofertadasNoSemestreNaoConcluidas;
+    }
+
+    public void setOfertadasNoSemestreNaoConcluidas(List<Disciplina> ofertadasNoSemestreNaoConcluidas) {
+        this.ofertadasNoSemestreNaoConcluidas = ofertadasNoSemestreNaoConcluidas;
+    }
+
     public double getIra() {
         return this.ira;
     }
