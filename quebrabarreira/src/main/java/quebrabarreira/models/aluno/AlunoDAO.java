@@ -86,6 +86,7 @@ public class AlunoDAO {
         ira = aluno.calculateIra();
         aluno.setIra(ira);
         aluno.setUltimoPeriodoCursado(ultimoPeriodo);
+        aluno.setIraUltimoPeriodo(aluno.calcularIRAUltimoPeriodo());
 
         return aluno;
     }

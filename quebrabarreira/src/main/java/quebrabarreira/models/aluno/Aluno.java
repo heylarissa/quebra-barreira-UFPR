@@ -53,11 +53,11 @@ public class Aluno {
         return nome;
     }
 
-    public int getTaxaAprovacao() {
+    public int getTaxaAprovacaoUltimoPeriodo() {
         return this.taxaAprovacao;
     }
 
-    public void setTaxaAprovacao(int taxaAprovacao) {
+    public void setTaxaAprovacaoUltimoPeriodo(int taxaAprovacao) {
         this.taxaAprovacao = taxaAprovacao;
     }
 

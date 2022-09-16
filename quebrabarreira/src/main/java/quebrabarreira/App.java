@@ -3,21 +3,19 @@ package quebrabarreira;
 import java.io.IOException;
 
 import quebrabarreira.controllers.AlunoController;
-import quebrabarreira.controllers.PedidoController;
-import quebrabarreira.view.TelaInicial;
+// import quebrabarreira.controllers.PedidoController;
+// import quebrabarreira.view.TelaInicial;
 
-//import quebrabarreira.controllers.PedidoController;
-//import quebrabarreira.view.telaInicial;
 
 public class App 
 {
     public static void main( String[] args ) throws IOException
     {
 
-        System.out.println( "Hello World!" );
+        // System.out.println( "Hello World!" );
 
-        TelaInicial tela = new TelaInicial();
-        tela.Tela_Inicial();
+        // TelaInicial tela = new TelaInicial();
+        // tela.Tela_Inicial();
 
         int ano = 2019; 
         String historicoPath = "./src/main/resources/historicoAluno.csv";    
@@ -29,7 +27,7 @@ public class App
         System.out.println(aluno.getAluno().getGRR());
         System.out.println(aluno.getAluno().getNome());
         System.out.println(aluno.getAluno().getIra());
-        System.out.println(aluno.getAluno().getTaxaAprovacao());
+        System.out.println(aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
         System.out.println(aluno.getAluno().getUltimoAnoCursado());
         System.out.println(aluno.getAluno().getUltimoPeriodoCursado());
         System.out.println(aluno.getAluno().calcularIRAUltimoPeriodo());
