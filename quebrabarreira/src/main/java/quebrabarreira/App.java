@@ -30,7 +30,7 @@ public class App
         System.out.println("ULTIMO PERIODO TAXA APROV " + aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
         System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
         System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
-        System.out.println("ULTIMO PERIODO IRA " + aluno.getAluno().getIraUltimoPeriodo());
+        //System.out.println("ULTIMO PERIODO IRA " + aluno.getAluno().getIraUltimoPeriodo());
         
         // PedidoController Pedido = new PedidoController();
 

@@ -15,7 +15,7 @@ public class Aluno {
     private int ultimoPeriodoCursado;
     private double taxaAprovacaoUltimoPeriodo;
     private double ira;
-    private double iraUltimoPeriodo;
+    //private double iraUltimoPeriodo;
 
     public Aluno() {
     }
@@ -128,7 +128,7 @@ public class Aluno {
         int matriculadas = 0;
 
         for (HistoricoDisciplina historicoDisciplina : historicosUltimoPeriodo()) {
-            if (historicoDisciplina.getFrequencia() != -1 & historicoDisciplina.getSituacao() == "Aprovado") { 
+            if (historicoDisciplina.getFrequencia() != -1 & historicoDisciplina.getSituacao() == "Aprovado") {
                 aprovadas++;
             }
             matriculadas++;
@@ -143,8 +143,10 @@ public class Aluno {
         List<HistoricoDisciplina> historicoUltimoPeriodo = new ArrayList<>();
 
         for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
+            System.out.println(historicoDisciplina.getPeriodo() + "      " + this.getUltimoPeriodoCursado() + "     " + historicoDisciplina.getMedia());
             if (historicoDisciplina.getPeriodo() == this.getUltimoPeriodoCursado()
                     && historicoDisciplina.getFrequencia() != -1) {
+
                 historicoUltimoPeriodo.add(historicoDisciplina);
             }
         }
@@ -152,28 +154,27 @@ public class Aluno {
         return historicoUltimoPeriodo;
     }
 
-    public double calcularIRAUltimoPeriodo() {
-        double ultimoIra;
-        double somatorioMedia = 0;
-        double cargaHorariaTotal = 0;
+    // public double calcularIRAUltimoPeriodo() {
+    //     double ultimoIra;
+    //     double somatorioMedia = 0;
+    //     double cargaHorariaTotal = 0;
 
-        for (HistoricoDisciplina historicoDisciplina : this.historicosUltimoPeriodo()) {
-            if (historicoDisciplina.getFrequencia() != -1) { // desconsidera materias com situação MATRICULADO
-                somatorioMedia = somatorioMedia
-                        + historicoDisciplina.getMedia() * historicoDisciplina.getDisciplina().getCargaHoraria();
-                cargaHorariaTotal = cargaHorariaTotal + historicoDisciplina.getDisciplina().getCargaHoraria();
-            }
-        }
-        cargaHorariaTotal = cargaHorariaTotal * 100;
-        ultimoIra = somatorioMedia / cargaHorariaTotal;
+    //     for (HistoricoDisciplina historicoDisciplina : this.historicosUltimoPeriodo()) {
+    //         somatorioMedia = somatorioMedia
+    //                 + historicoDisciplina.getMedia() * historicoDisciplina.getDisciplina().getCargaHoraria();
+    //         cargaHorariaTotal = cargaHorariaTotal + historicoDisciplina.getDisciplina().getCargaHoraria();
 
-        return ultimoIra;
-    }
+    //     }
+    //     cargaHorariaTotal = cargaHorariaTotal * 100;
+    //     ultimoIra = somatorioMedia / cargaHorariaTotal;
+
+    //     return ultimoIra;
+    // }
 
     public int calculaUltimoPeriodo() {
         int ultimoPeriodo = 0;
 
-        for (HistoricoDisciplina historicoDisciplina : disciplinas) {
+        for (HistoricoDisciplina historicoDisciplina : this.getHistoricos()) {
             if (historicoDisciplina.getPeriodo() > ultimoPeriodo & historicoDisciplina.getFrequencia() != -1) {
                 ultimoPeriodo = historicoDisciplina.getPeriodo();
             }
@@ -181,5 +182,8 @@ public class Aluno {
 
         return ultimoPeriodo;
     }
+
+    public List<HistoricoDisciplina> MateriasCursadas(){
+        return disciplinas;}
 
 }
