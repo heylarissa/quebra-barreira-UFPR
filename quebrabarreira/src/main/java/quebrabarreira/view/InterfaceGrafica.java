@@ -129,45 +129,6 @@ public class InterfaceGrafica {
         return newButton;
     }
 
-    // private static List<String> getValuesTable(JTable table, int row, int column)
-    // {
-    // List<String> capturados = new LinkedList<String>();
-
-    // for (int i = 0; i < row; i++) {
-    // for (int j = 0; j < column; j++) {
-    // if (table.getModel().getValueAt(i, j) != null) {
-    // String value = table.getModel().getValueAt(i, j).toString();
-    // if (!value.isBlank())
-    // capturados.add(table.getModel().getValueAt(i, j).toString());
-    // }
-    // }
-    // }
-
-    // return capturados;
-    // }
-
-    // private static void wipeJTable(JTable table, int row, int column) {
-    // for (int i = 0; i < row; i++) {
-    // for (int j = 0; j < column; j++) {
-    // table.setValueAt("", i, j);
-    // }
-    // }
-    // }
-
-    // private static void setJTable(JTable table, int row, int column, List<String>
-    // data) {
-    // wipeJTable(table, row, column);
-
-    // int k = 0;
-
-    // for (int i = 0; k < data.size() && i < row; i++) {
-    // for (int j = 0; k < data.size() && j < column; j++) {
-    // String value = data.get(k++);
-    // table.setValueAt(value, i, j);
-    // }
-    // }
-    // }
-
     public static void Invoke(AlunoController aluno, FormularioController formController) {
 
         JPanel panel = new JPanel(new GridBagLayout());
@@ -299,55 +260,9 @@ public class InterfaceGrafica {
         JPanel panel14 = addPanel(0, 11, panel, new GridLayout(1, 3));
 
         JButton buttonRecover = addButton(0, 0, "Recuperar", panel14);
-        // buttonRecover.addActionListener(new ActionListener() {
-        // public void actionPerformed(ActionEvent e) {
-        // Boolean didRecover = formController
-        // .recuperaFormulario(tname.getText().replace(" ", "_") + ".txt");
-
-        // if (!didRecover)
-        // return;
-
-        // Formulario form = formController.getForm();
-        // radioButtonCondicoes1.setSelected(form.isTemCondicoes());
-        // setJTable(discSolicitadasTable, n2, n2, form.getDisciplinasSolicitadas());
-        // tTelefone.setText(form.getTelefone());
-        // temail.setText(form.getEmail());
-        // if (form.getQuantidadeDisciplinasRestantes() >= 0)
-        // tObrigatorias.setText(Integer.toString(form.getQuantidadeDisciplinasRestantes()));
-        // if (form.getQuantidadeDisciplinasRestantes() >= 0)
-        // tOpt.setText(Integer.toString(form.getQuantidadeOptativasRestantes()));
-        // tpedido.setText(form.getJustificativa());
-        // }
-        // });
-
         JButton buttonSave = addButton(1, 0, "Salvar", panel14);
-        // buttonSave.addActionListener(new ActionListener() {
-        // public void actionPerformed(ActionEvent e) {
-        // formController.criaFormulario(aluno.getAluno(),
-        // radioButtonCondicoes1.isSelected(),
-        // getValuesTable(discSolicitadasTable, n2, n2), tpedido.getText());
-
-        // formController.saveFormulario(tname.getText().replace(" ", "_") + ".txt");
-
-        // Pedido.gerarPedido(aluno.getAluno());
-        // // }
-        // });
 
         JButton buttonSend = addButton(2, 0, "Enviar", panel14);
-        // buttonSend.addActionListener(new ActionListener() {
-        // public void actionPerformed(ActionEvent e) {
-        // formController.criaFormulario(
-        // aluno,
-        // false,
-        // radioButtonCondicoes1.isSelected(),
-        // Utils.toInt(tObrigatorias.getText()),
-        // Utils.toInt(tOpt.getText()),
-        // getValuesTable(discSolicitadasTable, n2, n2),
-        // tpedido.getText());
-        // Pedido.gerarPedido(formController.getForm());
-        // System.exit(0);
-        // }
-        // });
 
         panel.setBorder(new EmptyBorder(10, 50, 10, 50));
         JScrollPane scrollPane = new JScrollPane(panel);
