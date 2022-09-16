@@ -202,7 +202,7 @@ public class InterfaceGrafica {
 
         JPanel panelPercAprov = addPanel(2, 0, panelInfo, new GridLayout(2, 1));
         JLabel percAprov = addLabel(0, 0, true, "Porcentagem de aprovação do último período:", panelPercAprov);
-        JLabel tPercAprov = addLabel(0, 1, false, String.format("%2.1f%%", aluno.getTaxaAprovacao()), panelPercAprov);
+        JLabel tPercAprov = addLabel(0, 1, false, String.format("%2.1f%%", aluno.getTaxaAprovacaoUltimoPeriodo()), panelPercAprov);
 
         JPanel panel3 = addPanel(0, 2, panel, new GridLayout(1, 1));
         JLabel disciplinasFaltantes = addLabel(0, 5, true, "Disciplinas que faltam aprovar requisito:", panel3);
@@ -233,27 +233,27 @@ public class InterfaceGrafica {
         tableHeader.getColumnModel().getColumn(2).setHeaderValue("Terceiro Período");
         tableHeader.setBackground(Color.decode("#AED8E6"));
 
-        for (int i = 0; i < col; i++) {
-            List<Disciplina> materiasCursadas = aluno.materiasCursadasBarreira();
-            List<Disciplina> materiasPeriodo = aluno.materiasPeriodo(i + 1);
-            int j = 0;
-            for (Disciplina materia : materiasPeriodo) {
-                String codigo = materia.getCodigoMateria();
-                String label;
-                if (materia.isInList(materiasCursadas))
-                    label = "(A) " + codigo;
-                else if (materia.isInList(materiasMatriculado))
-                    label = "(M) " + codigo;
-                else if (materia.isInList(materiasReprovado))
-                    label = "(R) " + codigo;
-                else
-                    label = "( ) " + codigo;
+        // for (int i = 0; i < col; i++) {
+        //     List<Disciplina> materiasCursadas = aluno.materiasCursadasBarreira();
+        //     List<Disciplina> materiasPeriodo = aluno.materiasPeriodo(i + 1);
+        //     int j = 0;
+        //     for (Disciplina materia : materiasPeriodo) {
+        //         String codigo = materia.getCodigoMateria();
+        //         String label;
+        //         if (materia.isInList(materiasCursadas))
+        //             label = "(A) " + codigo;
+        //         else if (materia.isInList(materiasMatriculado))
+        //             label = "(M) " + codigo;
+        //         else if (materia.isInList(materiasReprovado))
+        //             label = "(R) " + codigo;
+        //         else
+        //             label = "( ) " + codigo;
 
-                discTable.setValueAt(label, j, i);
-                discTable.getColumnModel().getColumn(i).setPreferredWidth(150);
-                j++;
-            }
-        }
+        //         discTable.setValueAt(label, j, i);
+        //         discTable.getColumnModel().getColumn(i).setPreferredWidth(150);
+        //         j++;
+        //     }
+        // }
 
         // discTable.setFont(new Font("Arial", Font.PLAIN, 15));
         // discTable.setRowHeight(discTable.getRowHeight() + 8);

@@ -24,7 +24,7 @@ public class App
         System.out.println(aluno.getAluno().getGRR());
         System.out.println(aluno.getAluno().getNome());
         System.out.println(aluno.getAluno().getIra());
-        System.out.println(aluno.getAluno().getTaxaAprovacao());
+        System.out.println(aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
         System.out.println(aluno.getAluno().getUltimoAnoCursado());
         System.out.println(aluno.getAluno().getUltimoPeriodoCursado());
         
