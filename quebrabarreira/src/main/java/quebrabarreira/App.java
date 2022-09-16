@@ -13,10 +13,6 @@ public class App
 {
     public static void main( String[] args ) throws IOException
     {
-
-        System.out.println( "Hello World!" );
-
-
         int ano = 2019; 
         String historicoPath = "./src/main/resources/historicoAluno.csv";    
         String gradePath = "./src/main/resources/grade2019.csv";

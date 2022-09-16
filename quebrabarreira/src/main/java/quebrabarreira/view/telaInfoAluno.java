@@ -25,6 +25,8 @@ public class telaInfoAluno extends JFrame implements ActionListener{
     //   return instancia;
     // }
 
+    public telaInfoAluno(){}
+
     public telaInfoAluno(AlunoController aluno) {
 
         setTitle("Aluno");
@@ -83,10 +85,10 @@ public class telaInfoAluno extends JFrame implements ActionListener{
     @Override
   public void actionPerformed(ActionEvent e) {
 
-    JFrame proxTela;
+    //JFrame proxTela;
     
     if (e.getSource() == Binicio) {
-      proxTela = TelaInicial.getInstance();
+      //proxTela = TelaInicial.getInstance();
       System.out.println("inicio");
       //TelaInicial inicio = new TelaInicial();
       setVisible(false);

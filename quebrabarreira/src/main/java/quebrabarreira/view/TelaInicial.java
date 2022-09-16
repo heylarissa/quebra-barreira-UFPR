@@ -87,7 +87,7 @@ public class TelaInicial extends JFrame implements ActionListener {
       //proxTela = telaInfoAluno.getInstance();
 
       System.out.println("alunoo");
-      telaInfoAluno infoAluno = new telaInfoAluno(aluno);
+      telaInfoAluno infoAluno = new telaInfoAluno();
       setVisible(false);
 
     } else if  (e.getSource() == Bimportar){
