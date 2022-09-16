@@ -24,6 +24,8 @@ public class TelaInicial extends JFrame implements ActionListener {
   public TelaInicial(AlunoController aluno) {
   }
 
+  AlunoController alunoInfo;
+
 
   //public static synchronized TelaInicial getInstance(){
   //  if (instancia == null)
@@ -32,7 +34,7 @@ public class TelaInicial extends JFrame implements ActionListener {
   //}
 
 
-  public void Tela_Inicial(AlunoController aluno) {
+  public void Tela_Inicial(AlunoController alunoInfo) {
 
     setTitle("Tela Incial");
     setSize(500, 500);
@@ -86,8 +88,9 @@ public class TelaInicial extends JFrame implements ActionListener {
 
       //proxTela = telaInfoAluno.getInstance();
 
-      System.out.println("alunoo");
-      telaInfoAluno infoAluno = new telaInfoAluno();
+      System.out.println("aluno");
+      
+      telaInfoAluno infoAluno = new telaInfoAluno(alunoInfo);
       setVisible(false);
 
     } else if  (e.getSource() == Bimportar){

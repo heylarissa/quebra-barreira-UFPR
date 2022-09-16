@@ -25,7 +25,9 @@ public class telaInfoAluno extends JFrame implements ActionListener{
     //   return instancia;
     // }
 
-    public telaInfoAluno(){}
+    //public telaInfoAluno(){}
+
+    
 
     public telaInfoAluno(AlunoController aluno) {
 
@@ -36,9 +38,8 @@ public class telaInfoAluno extends JFrame implements ActionListener{
         setResizable(false);
         setLocationRelativeTo(null);
 
-
         Titulo1 = new JLabel();
-        Titulo1.setText("Materia já feitas");
+        Titulo1.setText(aluno.getAluno().getNome());
         Titulo1.setBounds(65, 10, 120, 20);
 
         Titulo2 = new JLabel();

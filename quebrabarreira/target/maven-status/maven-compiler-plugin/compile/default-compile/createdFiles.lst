@@ -3,6 +3,7 @@ quebrabarreira/Utils/FileHandle.class
 quebrabarreira/models/Pedido.class
 quebrabarreira/models/aluno/AlunoDAO.class
 quebrabarreira/models/Pedido$1.class
+quebrabarreira/view/telaUtils.class
 quebrabarreira/models/aluno/Aluno.class
 quebrabarreira/controllers/AlunoController.class
 quebrabarreira/models/PedidoDAO.class
