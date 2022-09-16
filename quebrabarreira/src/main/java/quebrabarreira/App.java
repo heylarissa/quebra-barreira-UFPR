@@ -1,9 +1,11 @@
 package quebrabarreira;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import quebrabarreira.controllers.AlunoController;
+import quebrabarreira.models.Pedido;
 // import quebrabarreira.controllers.PedidoController;
 // import quebrabarreira.view.TelaInicial;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
@@ -30,32 +32,19 @@ public class App {
         System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
         System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
 
-        for (HistoricoDisciplina disc : aluno.getAluno().getHistoricos()) {
-            if (disc.getSituacao() == "Aprovado") {
-                System.out.println(disc.getDisciplina().getCodigoDisciplina() + "   " + disc.getSituacao() + "     "
-                        + disc.getMedia());
-            }
-        }
-        // System.out.println("ULTIMO PERIODO IRA " +
-        // aluno.getAluno().getIraUltimoPeriodo());
-
-        // PedidoController Pedido = new PedidoController();
-
-        // FileHandle file = new FileHandle();
-        // List<HashMap<String, String>> result;
-        // result = file.getCsv(gradePath);
-
-        // for (HashMap<String,String> hashMap : result) {
-        // System.out.println(hashMap.get("PERIODO_IDEAL"));
-        // System.out.println(hashMap.get("CH_TOTAL"));
-        // System.out.println(hashMap.get("COD_DISCIPLINA"));
-        // // System.out.println(hashMap.get("PERIODO"));
-        // // System.out.println(hashMap.get("PERIODO"));
-        // // System.out.println(hashMap.get("PERIODO"));
-        // // System.out.println(hashMap.get("PERIODO"));
-        // // System.out.println(hashMap.get("PERIODO"));
-        // // System.out.println(hashMap.get("PERIODO"));
-
-        // }
+        List<String> materiasPedidas = new ArrayList<>();
+        materiasPedidas.add("CI1061");
+        materiasPedidas.add("CI1163");
+        materiasPedidas.add("CI1350");
+        materiasPedidas.add("CI1215");
+        materiasPedidas.add("CI1165");
+        materiasPedidas.add("CI1028");
+        Pedido pedido = new Pedido(aluno.getAluno().getGRR(), "1", materiasPedidas);
+        pedido.savePedido();
+        pedido.readPedido();
+        
+        List<String> res = new ArrayList<>();
+        res = pedido.trataPedido(aluno);
+        System.out.println(res);
     }
 }

@@ -165,13 +165,10 @@ public class Aluno {
 
         for (HistoricoDisciplina historicoDisciplina : hist) {
             if (historicoDisciplina.getMedia() > 70) {
-                System.out.println(aprovadas + "    " + historicoDisciplina.getSituacao() + "        " + historicoDisciplina.getMedia());
                 aprovadas++;
             }
             matriculadas++;
         }
-
-        System.out.println(aprovadas + "  " + matriculadas);
 
         taxa = aprovadas / matriculadas;
 

@@ -72,8 +72,6 @@ public class AlunoDAO {
             historicoAlunoList.add(historico);
         }
 
-        System.out.println(cargaHorariaTotal);
-
         aluno.setHistoricos(historicoAlunoList);
 
         return aluno;

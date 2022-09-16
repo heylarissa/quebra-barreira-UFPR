@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import quebrabarreira.controllers.AlunoController;
 import quebrabarreira.models.aluno.Aluno;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
@@ -39,7 +40,9 @@ public class Pedido {
         this.dao.readPedido();
     }
 
-    public List<String> trataPedido(Aluno aluno) {
+    public List<String> trataPedido(AlunoController alunoCtr) {
+        
+        Aluno aluno = alunoCtr.getAluno();
 
         List<List<String>> grade = this.dao.getGrades();
 
@@ -48,7 +51,7 @@ public class Pedido {
         final HashMap<String, Integer> materiasMap = new HashMap<>(); // Materia: Periodo - Para as materias do pedido
         getMapMateriasPeriodo(grade, gradePeriodo, materiasMap);
         sortMaterias(materiasMap);
-
+        
         getOptativas(grade);
         filterOptativasOut();
 
@@ -59,19 +62,25 @@ public class Pedido {
             this.resultado = new ArrayList<>(this.materias);
             return this.resultado;
 
-        } else if (aluno.getTaxaAprovacaoUltimoPeriodo() > (2 / 3)) {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 5 + 1));
-            return this.resultado;
+        } else if (aluno.getTaxaAprovacaoUltimoPeriodo() > (2.0 / 3.0)) {
+            return sublistMaterias(5);
 
-        } else if (aluno.getTaxaAprovacaoUltimoPeriodo() > (1 / 2)) {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 4 + 1));
-            return this.resultado;
-
+        } else if (aluno.getTaxaAprovacaoUltimoPeriodo() > (1.0 / 2.0)) {
+            return sublistMaterias(4);
+            
         } else {
-            this.resultado = new ArrayList<>(this.materias.subList(0, 3 + 1));
-            return this.resultado;
+            return sublistMaterias(3);
         }
 
+    }
+
+    private List<String> sublistMaterias(Integer n) {
+        if (this.materias.size() < n) {
+            this.resultado = new ArrayList<>(this.materias);
+            return this.resultado;                    
+        }
+        this.resultado = new ArrayList<>(this.materias.subList(0, n));
+        return this.resultado;
     }
 
     private void removeCI215(Aluno aluno) {
@@ -102,10 +111,11 @@ public class Pedido {
 
     private void getMapMateriasPeriodo(List<List<String>> grade, HashMap<String, Integer> gradePeriodo,
             final HashMap<String, Integer> materias) {
+
         for (List<String> mat : grade) {
             if (mat.size() > 6) {
                 int periodo;
-                if (mat.get(6).equals(""))
+                if (mat.get(6).equals("") || mat.get(6).equals("null"))
                     periodo = 10;
                 else
                     periodo = Integer.parseInt(mat.get(6));
@@ -135,8 +145,8 @@ public class Pedido {
         this.optativas = new ArrayList<>();
         for (List<String> mat : grade) {
             if (mat.size() > 8) {
-                if (mat.get(8).compareTo("Optativa") == 0) {
-                    optativas.add(mat.get(3));
+                if (mat.get(8).compareTo("Optativa") == 0 || mat.get(7).compareTo("Optativa") == 0) {
+                    this.optativas.add(mat.get(3));
                 }
             }
         }
