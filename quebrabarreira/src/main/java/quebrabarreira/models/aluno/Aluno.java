@@ -14,6 +14,7 @@ public class Aluno {
     private List<HistoricoDisciplina> historico;
     private List<HistoricoDisciplina> ultimoPeriodoDisciplinas;
     private List<Disciplina> materiasQueFaltaNaBarreira;
+    private List<Disciplina> materiasBarreira;
     private List<Disciplina> ofertadasNoSemestreNaoConcluidas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
@@ -151,6 +152,14 @@ public class Aluno {
         return this.ultimoPeriodoDisciplinas;
     }
 
+    public List<Disciplina> getMateriasBarreira() {
+        return this.materiasBarreira;
+    }
+
+    public void setMateriasBarreira(List<Disciplina> materiasBarreira) {
+        this.materiasBarreira = materiasBarreira;
+    }
+
     public double calculateIra() {
         double iraTotal;
         double somatorioMedia = 0;
@@ -223,6 +232,8 @@ public class Aluno {
                 cursadas.add(historicoDisciplina.getDisciplina());
             }
         }
+
+        this.materiasBarreira = cursadas;
         
         List<Disciplina> lista = new ArrayList<>();
 
