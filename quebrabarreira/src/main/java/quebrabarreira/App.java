@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import quebrabarreira.controllers.AlunoController;
 import quebrabarreira.controllers.PedidoController;
+import quebrabarreira.view.InterfaceGrafica;
 import quebrabarreira.view.TelaInicial;
 
 //import quebrabarreira.controllers.PedidoController;
@@ -19,8 +20,8 @@ public class App
         
         AlunoController aluno = new AlunoController(ano, historicoPath, gradePath);
 
-        TelaInicial tela = new TelaInicial(aluno);
-        tela.Tela_Inicial(aluno);
+        // TelaInicial tela = new TelaInicial(aluno);
+        // tela.Tela_Inicial(aluno);
 
         // tela info aluno
         System.out.println(aluno.getAluno().getGRR());
@@ -48,5 +49,7 @@ public class App
         //     // System.out.println(hashMap.get("PERIODO"));
 
         // }
+        InterfaceGrafica.Invoke(aluno);
+
     }
 }

@@ -3,7 +3,7 @@ quebrabarreira/Utils/FileHandle.class
 quebrabarreira/models/Pedido.class
 quebrabarreira/models/aluno/AlunoDAO.class
 quebrabarreira/models/Pedido$1.class
-quebrabarreira/view/telaUtils.class
+quebrabarreira/controllers/FormularioController.class
 quebrabarreira/models/aluno/Aluno.class
 quebrabarreira/controllers/AlunoController.class
 quebrabarreira/models/PedidoDAO.class
@@ -13,6 +13,7 @@ quebrabarreira/App.class
 quebrabarreira/controllers/PedidoController.class
 quebrabarreira/view/telaSolicitacao.class
 quebrabarreira/view/telaResultado.class
+quebrabarreira/view/InterfaceGrafica.class
 quebrabarreira/view/telaInfoAluno.class
 quebrabarreira/models/aluno/curso/CursoDAO.class
 quebrabarreira/models/aluno/historico/HistoricoDisciplina.class
