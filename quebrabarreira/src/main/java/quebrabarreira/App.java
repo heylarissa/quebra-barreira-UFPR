@@ -7,9 +7,6 @@ import quebrabarreira.controllers.PedidoController;
 import quebrabarreira.view.InterfaceGrafica;
 import quebrabarreira.view.TelaInicial;
 
-public class App {
-    public static void main(String[] args) throws IOException {
-
 public class App 
 {
     public static void main( String[] args ) throws IOException
