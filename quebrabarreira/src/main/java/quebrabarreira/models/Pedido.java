@@ -12,21 +12,17 @@ import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class Pedido {
     String grr;
-    String numeroPedido;
     List<String> materias;
     List<String> resultado;
     public PedidoDAO dao;
     List<String> optativas;
 
-    public Pedido(String grr, String numeroPedido, List<String> materias) {
+    public Pedido(String grr, List<String> materias) {
         this.grr = grr;
-        this.numeroPedido = numeroPedido;
         this.materias = materias;
         this.dao = new PedidoDAO(this);
     }
 
-    public String getNumeroPedido() {return this.numeroPedido;}
-    public void setNumeroPedido(String numeroPedido) {this.numeroPedido = numeroPedido;}
     public String getGrr() {return this.grr;}
     public void setGrr(String grr) {this.grr = grr;}
     public List<String> getMaterias() {return this.materias;}

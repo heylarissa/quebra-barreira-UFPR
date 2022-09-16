@@ -15,7 +15,7 @@ public class PedidoDAO {
 
     public PedidoDAO(Pedido pedido) {
         this.pedido = pedido;
-        this.path = this.basePath + "Pedido" + pedido.getGrr() + pedido.getNumeroPedido() + this.pathExtension;
+        this.path = this.basePath + "Pedido" + pedido.getGrr() + this.pathExtension;
     }
 
     /**
