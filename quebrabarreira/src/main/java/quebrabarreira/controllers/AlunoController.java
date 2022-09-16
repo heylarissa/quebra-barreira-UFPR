@@ -35,7 +35,8 @@ public class AlunoController {
         // aluno.setIraUltimoPeriodo(iraUltimo);
         
         aluno.calcMateriasBarreira();
-        
+        aluno.OfertadasNoSemestreNaoConcluidas();
+
         aluno.setUltimoPeriodoDisciplinas(aluno.historicosUltimoPeriodo());
         double taxa = aluno.calcularTaxaAprovacaoUltimoPeriodo(aluno.getUltimoPeriodoDisciplinas());
         aluno.setTaxaAprovacaoUltimoPeriodo(taxa);

@@ -14,6 +14,7 @@ public class Aluno {
     private List<HistoricoDisciplina> historico;
     private List<HistoricoDisciplina> ultimoPeriodoDisciplinas;
     private List<Disciplina> materiasQueFaltaNaBarreira;
+    private List<Disciplina> ofertadasNoSemestreNaoConcluidas;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
     private double taxaAprovacaoUltimoPeriodo;
@@ -178,14 +179,14 @@ public class Aluno {
         return taxa*100;
     }
 
-    public List<Disciplina> OfertadasNoSemestreNaoConcluidas() {;
+    public void OfertadasNoSemestreNaoConcluidas() {;
 
         List<Disciplina> grade = curso.getDisciplinas();
         List<Disciplina> cursadas = new ArrayList<>();
 
         /* HistoricoDisciplina para list<Disciplina> - para fins de comparacao*/ 
         for (HistoricoDisciplina historicoDisciplina : historico) {
-            if (historicoDisciplina.getSituacao() == "Aprovado"){
+            if (historicoDisciplina.getSituacao().equals("Aprovado")){
                 cursadas.add(historicoDisciplina.getDisciplina());
             }
         }
@@ -196,7 +197,7 @@ public class Aluno {
             boolean naoCursado = true;
 
             for (Disciplina disciplina : cursadas) {
-                if (hist.getCodigoDisciplina() == disciplina.getCodigoDisciplina()){
+                if (hist.getCodigoDisciplina().equals(disciplina.getCodigoDisciplina())) {
                     naoCursado = false;
                     break;
                 }
@@ -207,7 +208,7 @@ public class Aluno {
             }
         }
 
-        return lista;
+        this.ofertadasNoSemestreNaoConcluidas = lista;
     }
 
     public void calcMateriasBarreira() {
