@@ -1,5 +1,7 @@
 package quebrabarreira.models.aluno.curso;
 
+import java.util.List;
+
 public class Disciplina {
     private String nomeDisciplina; // COD_ATIV_CURRIC
     private int periodoIdeal;
@@ -71,6 +73,13 @@ public class Disciplina {
 
     public void setTipoGrade(String tipoGrade) {
         this.tipoGrade = tipoGrade;
+    }
+
+    public boolean isInList(List<Disciplina> materias) {
+        for (Disciplina m : materias)
+            if (m.getCodigoDisciplina().equals(this.getCodigoDisciplina()))
+                return true;
+        return false;
     }
 
 }
