@@ -1,10 +1,10 @@
 package quebrabarreira;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
+// import java.util.HashMap;
+// import java.util.List;
 
-import quebrabarreira.Utils.FileHandle;
+// import quebrabarreira.Utils.FileHandle;
 import quebrabarreira.controllers.AlunoController;
 //import quebrabarreira.controllers.PedidoController;
 //import quebrabarreira.view.telaInicial;
@@ -26,6 +26,7 @@ public class App
         System.out.println(aluno.getAluno().getTaxaAprovacao());
         System.out.println(aluno.getAluno().getUltimoAnoCursado());
         System.out.println(aluno.getAluno().getUltimoPeriodoCursado());
+        System.out.println(aluno.getAluno().calcularIRAUltimoPeriodo());
         
         // PedidoController Pedido = new PedidoController();
 

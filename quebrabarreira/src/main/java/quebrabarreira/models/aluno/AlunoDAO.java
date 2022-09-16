@@ -27,6 +27,8 @@ public class AlunoDAO {
         double ira = 0;
         int cargaHorariaTotal = 0;
 
+        int ultimoPeriodo = -1;
+
         for (HashMap<String, String> hash : csvResult) {
             String codigoDisciplina = hash.get("COD_ATIV_CURRIC");
             String nomeDisciplina = hash.get("NOME_ATIV_CURRIC");
@@ -44,7 +46,7 @@ public class AlunoDAO {
             String situacao = hash.get("SITUACAO");
 
             int periodo;
-                
+
             try {
                 periodo = Integer.parseInt(hash.get("SITUACAO_ITEM"));
             } catch (Exception e) {
@@ -70,13 +72,19 @@ public class AlunoDAO {
             aluno.setGRR(hash.get("MATR_ALUNO"));
 
             historicoAlunoList.add(historico);
+            // Determina qual foi o ultimo periodo em que o aluno cursou ao menos uma
+            // matéria
+            if (periodo > ultimoPeriodo) {
+                ultimoPeriodo = historico.getPeriodo();
+            }
         }
 
         System.out.println(cargaHorariaTotal);
-        
+
         aluno.setHistoricos(historicoAlunoList);
         ira = aluno.calculateIra();
         aluno.setIra(ira);
+        aluno.setUltimoPeriodoCursado(ultimoPeriodo);
 
         return aluno;
     }

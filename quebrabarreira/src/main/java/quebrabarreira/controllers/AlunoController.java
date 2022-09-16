@@ -1,7 +1,6 @@
 package quebrabarreira.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import quebrabarreira.models.aluno.Aluno;
 import quebrabarreira.models.aluno.AlunoDAO;

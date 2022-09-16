@@ -20,18 +20,19 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Aluno (String nome, String grr, Curso curso){
+    public Aluno(String nome, String grr, Curso curso) {
         this.nome = nome;
         this.grr = grr;
         this.curso = curso;
     }
 
-    public Aluno (String nome, String grr, Curso curso, List<HistoricoDisciplina> disciplinas){
+    public Aluno(String nome, String grr, Curso curso, List<HistoricoDisciplina> disciplinas) {
         this.nome = nome;
         this.grr = grr;
         this.curso = curso;
         this.disciplinas = disciplinas;
     }
+
     public double getIra() {
         return this.ira;
     }
@@ -48,16 +49,15 @@ public class Aluno {
         this.ira = ira;
     }
 
-
     public String getNome() {
         return nome;
     }
 
-    public int getTaxaAprovacao(){
+    public int getTaxaAprovacao() {
         return this.taxaAprovacao;
     }
 
-    public void setTaxaAprovacao(int taxaAprovacao){
+    public void setTaxaAprovacao(int taxaAprovacao) {
         this.taxaAprovacao = taxaAprovacao;
     }
 
@@ -97,18 +97,20 @@ public class Aluno {
         return ultimoAnoCursado;
     }
 
-    public void setUltimoPeriodoCursado(int ultimoPeriodoCursado){
+    public void setUltimoPeriodoCursado(int ultimoPeriodoCursado) {
         this.ultimoPeriodoCursado = ultimoPeriodoCursado;
     }
-    public int getUltimoPeriodoCursado(){
+
+    public int getUltimoPeriodoCursado() {
         return this.ultimoPeriodoCursado;
     }
 
-    public List<HistoricoDisciplina> getHistoricoUltimoPeriodoCursado(List<HistoricoDisciplina> disciplinas, int ultimoPeriodoCursado){
+    public List<HistoricoDisciplina> HistoricoUltimoPeriodoCursado(List<HistoricoDisciplina> disciplinas,
+            int ultimoPeriodoCursado) {
         List<HistoricoDisciplina> ultimoPeriodoHistorico = new ArrayList<HistoricoDisciplina>();
 
         for (HistoricoDisciplina disciplina : disciplinas) {
-            if (disciplina.getPeriodo() == this.getUltimoPeriodoCursado()){
+            if (disciplina.getPeriodo() == this.getUltimoPeriodoCursado()) {
                 ultimoPeriodoHistorico.add(disciplina);
             }
         }
@@ -117,26 +119,34 @@ public class Aluno {
     }
 
     public double calcularIRAUltimoPeriodo() {
-        double IRA=0;
+        double ira;
+        double somatorioMedia = 0;
+        double cargaHorariaTotal = 0;
+        List<HistoricoDisciplina> historico = HistoricoUltimoPeriodoCursado(disciplinas, ultimoPeriodoCursado);
 
+        for (HistoricoDisciplina disciplina : historico) {
+            somatorioMedia = somatorioMedia + disciplina.getMedia() * disciplina.getDisciplina().getCargaHoraria();
+            cargaHorariaTotal = cargaHorariaTotal + disciplina.getDisciplina().getCargaHoraria();
+        }
 
-
-        return IRA;
+        cargaHorariaTotal = cargaHorariaTotal * 100;
+        ira = somatorioMedia / cargaHorariaTotal;
+        return ira;
     }
 
-    public double calculateIra(){
-        double ira = 0;
+    public double calculateIra() {
+        double ira;
         double somatorioMedia = 0;
         double cargaHorariaTotal = 0;
         for (HistoricoDisciplina historicoDisciplina : this.disciplinas) {
-            if (historicoDisciplina.getFrequencia() != -1){ // desconsidera materias com situação MATRICULADO
-                somatorioMedia = somatorioMedia + historicoDisciplina.getMedia()*historicoDisciplina.getDisciplina().getCargaHoraria();
+            if (historicoDisciplina.getFrequencia() != -1) { // desconsidera materias com situação MATRICULADO
+                somatorioMedia = somatorioMedia
+                        + historicoDisciplina.getMedia() * historicoDisciplina.getDisciplina().getCargaHoraria();
                 cargaHorariaTotal = cargaHorariaTotal + historicoDisciplina.getDisciplina().getCargaHoraria();
             }
-
         }
-        cargaHorariaTotal = cargaHorariaTotal * 100;
 
+        cargaHorariaTotal = cargaHorariaTotal * 100;
         ira = somatorioMedia / cargaHorariaTotal;
         return ira;
     }
