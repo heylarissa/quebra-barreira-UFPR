@@ -1,15 +1,9 @@
 package quebrabarreira;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import quebrabarreira.controllers.AlunoController;
-import quebrabarreira.models.aluno.Aluno;
 import quebrabarreira.models.aluno.curso.Disciplina;
-// import quebrabarreira.controllers.PedidoController;
-// import quebrabarreira.view.TelaInicial;
-import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class App {
     public static void main(String[] args) throws IOException {

@@ -1,14 +1,11 @@
 package quebrabarreira.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import quebrabarreira.models.aluno.Aluno;
 import quebrabarreira.models.aluno.AlunoDAO;
 import quebrabarreira.models.aluno.curso.Curso;
 import quebrabarreira.models.aluno.curso.CursoDAO;
-import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class AlunoController {
     Aluno aluno;

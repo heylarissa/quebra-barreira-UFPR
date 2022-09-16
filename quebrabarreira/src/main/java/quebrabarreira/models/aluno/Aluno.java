@@ -3,8 +3,6 @@ package quebrabarreira.models.aluno;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.loading.PrivateClassLoader;
-
 import quebrabarreira.models.aluno.curso.Curso;
 import quebrabarreira.models.aluno.curso.Disciplina;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
@@ -230,26 +228,5 @@ public class Aluno {
 
         System.out.println(this.materiasQueFaltaNaBarreira);
     }
-
-
-    // public double calcularIRAUltimoPeriodo() {
-    // double ultimoIra;
-    // double somatorioMedia = 0;
-    // double cargaHorariaTotal = 0;
-
-    // for (HistoricoDisciplina historicoDisciplina :
-    // this.historicosUltimoPeriodo()) {
-    // somatorioMedia = somatorioMedia
-    // + historicoDisciplina.getMedia() *
-    // historicoDisciplina.getDisciplina().getCargaHoraria();
-    // cargaHorariaTotal = cargaHorariaTotal +
-    // historicoDisciplina.getDisciplina().getCargaHoraria();
-
-    // }
-    // cargaHorariaTotal = cargaHorariaTotal * 100;
-    // ultimoIra = somatorioMedia / cargaHorariaTotal;
-
-    // return ultimoIra;
-    // }
 
 }

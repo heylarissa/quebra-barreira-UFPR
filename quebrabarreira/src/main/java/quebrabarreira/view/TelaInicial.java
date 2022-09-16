@@ -5,9 +5,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -61,11 +59,11 @@ public class TelaInicial extends JFrame implements ActionListener {
     
     if (e.getSource() == BSolicitar) {
       System.out.println("MATERIA");
-      telaSolicitacao solicitacao = new telaSolicitacao();
+      // telaSolicitacao solicitacao = new telaSolicitacao();
       setVisible(false);
     } else if  (e.getSource() == Binformacoes){
       System.out.println("alunoo");
-      telaInfoAluno infoAluno = new telaInfoAluno();
+      // telaInfoAluno infoAluno = new telaInfoAluno();
       setVisible(false);
     } else if  (e.getSource() == Bimportar){
 
