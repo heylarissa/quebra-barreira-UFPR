@@ -13,6 +13,14 @@ public class telaSolicitacao extends JFrame implements ActionListener {
 
     //private JButton Binicio;
 
+    private static telaSolicitacao instancia = null;
+
+    public static synchronized telaSolicitacao getInstance(){
+      if (instancia == null)
+        instancia = new telaSolicitacao();
+      return instancia;
+    }
+
     public telaSolicitacao() {
 
         setTitle("Solicitar");

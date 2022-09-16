@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import quebrabarreira.controllers.AlunoController;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,8 +19,20 @@ public class TelaInicial extends JFrame implements ActionListener {
   private JButton BSolicitar, Binformacoes,Bimportar;
   private JLabel Titulo;
 
+  private static TelaInicial instancia = null;
 
-  public void Tela_Inicial() {
+  public TelaInicial(AlunoController aluno) {
+  }
+
+
+  //public static synchronized TelaInicial getInstance(){
+  //  if (instancia == null)
+  //    instancia = new TelaInicial();
+  //  return instancia;
+  //}
+
+
+  public void Tela_Inicial(AlunoController aluno) {
 
     setTitle("Tela Incial");
     setSize(500, 500);
@@ -58,15 +72,24 @@ public class TelaInicial extends JFrame implements ActionListener {
   
   @Override
   public void actionPerformed(ActionEvent e) {
+
+    JFrame proxTela;
     
     if (e.getSource() == BSolicitar) {
+
+      proxTela = telaSolicitacao.getInstance();
       System.out.println("MATERIA");
-      telaSolicitacao solicitacao = new telaSolicitacao();
+      //telaSolicitacao solicitacao = new telaSolicitacao();
       setVisible(false);
+
     } else if  (e.getSource() == Binformacoes){
+
+      //proxTela = telaInfoAluno.getInstance();
+
       System.out.println("alunoo");
-      telaInfoAluno infoAluno = new telaInfoAluno();
+      telaInfoAluno infoAluno = new telaInfoAluno(aluno);
       setVisible(false);
+
     } else if  (e.getSource() == Bimportar){
 
       System.out.println("historico");
@@ -86,3 +109,8 @@ public class TelaInicial extends JFrame implements ActionListener {
     
   }
 }
+/*voltar aqui */
+// proxTela.setLocationRelativeTo(this);
+// proxTela.setBounds(this.getBounds());
+// this.setVisible(false);
+// proxTela.setVisible(true);

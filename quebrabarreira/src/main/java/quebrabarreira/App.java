@@ -16,14 +16,15 @@ public class App
 
         System.out.println( "Hello World!" );
 
-        TelaInicial tela = new TelaInicial();
-        tela.Tela_Inicial();
 
         int ano = 2019; 
         String historicoPath = "./src/main/resources/historicoAluno.csv";    
         String gradePath = "./src/main/resources/grade2019.csv";
         
         AlunoController aluno = new AlunoController(ano, historicoPath, gradePath);
+
+        TelaInicial tela = new TelaInicial(aluno);
+        tela.Tela_Inicial(aluno);
 
         // tela info aluno
         System.out.println(aluno.getAluno().getGRR());
