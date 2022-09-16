@@ -1,11 +1,11 @@
 package quebrabarreira;
 
 import java.io.IOException;
-// import java.util.HashMap;
-// import java.util.List;
 
-// import quebrabarreira.Utils.FileHandle;
 import quebrabarreira.controllers.AlunoController;
+import quebrabarreira.controllers.PedidoController;
+import quebrabarreira.view.TelaInicial;
+
 //import quebrabarreira.controllers.PedidoController;
 //import quebrabarreira.view.telaInicial;
 
@@ -13,6 +13,12 @@ public class App
 {
     public static void main( String[] args ) throws IOException
     {
+
+        System.out.println( "Hello World!" );
+
+        TelaInicial tela = new TelaInicial();
+        tela.Tela_Inicial();
+
         int ano = 2019; 
         String historicoPath = "./src/main/resources/historicoAluno.csv";    
         String gradePath = "./src/main/resources/grade2019.csv";
@@ -46,6 +52,5 @@ public class App
         //     // System.out.println(hashMap.get("PERIODO"));
 
         // }
-
     }
 }

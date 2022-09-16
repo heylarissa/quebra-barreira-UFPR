@@ -7,8 +7,8 @@ quebrabarreira/models/aluno/Aluno.class
 quebrabarreira/controllers/AlunoController.class
 quebrabarreira/models/PedidoDAO.class
 quebrabarreira/models/aluno/curso/Curso.class
+quebrabarreira/view/TelaInicial.class
 quebrabarreira/App.class
-quebrabarreira/view/telaInicial.class
 quebrabarreira/controllers/PedidoController.class
 quebrabarreira/view/telaSolicitacao.class
 quebrabarreira/view/telaResultado.class
