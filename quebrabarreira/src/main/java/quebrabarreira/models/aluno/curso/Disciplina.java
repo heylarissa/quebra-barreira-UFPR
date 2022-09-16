@@ -6,6 +6,7 @@ public class Disciplina {
     private String codigoDisciplina; // COD_ATIV_CURRIC
     private String classificacao; // DESCR_ESTRUTURA {obrigatoria, optativa, tcc, estagio obrigatorio}
     private int cargaHoraria; // CH_TOTAL (horas)
+    private String tipoGrade;
 
     public Disciplina(){}
 
@@ -13,13 +14,15 @@ public class Disciplina {
                         String nomeDisciplina, 
                         int periodoIdeal, 
                         String classificacao,
-                        int cargaHoraria) {
+                        int cargaHoraria,
+                        String tipoGrade) {
                             
         this.codigoDisciplina = codigoDisciplina;
         this.nomeDisciplina = nomeDisciplina;
         this.periodoIdeal = periodoIdeal;
         this.classificacao = classificacao;
         this.cargaHoraria = cargaHoraria;
+        this.tipoGrade = tipoGrade;
     }
 
     public void setPeriodoIdeal(int periodoIdeal) {
@@ -60,6 +63,14 @@ public class Disciplina {
 
     public String getClassificacao() {
         return classificacao;
+    }
+
+    public String getTipoGrade() {
+        return tipoGrade;
+    }
+
+    public void setTipoGrade(String tipoGrade) {
+        this.tipoGrade = tipoGrade;
     }
 
 }

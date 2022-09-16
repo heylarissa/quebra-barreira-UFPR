@@ -32,10 +32,11 @@ public class AlunoDAO {
             String nomeDisciplina = hash.get("NOME_ATIV_CURRIC");
 
             String classificacao = hash.get("DESCR_ESTRUTURA");
+            String versaoGrade = hash.get("NUM_VERSAO");
             int cargaHoraria = Integer.parseInt(hash.get("CH_TOTAL"));
             Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina,
                     -1, // periodo ideal - inexistente no arquivo de histórico, SOMENTE NA GRADE
-                    classificacao, cargaHoraria);
+                    classificacao, cargaHoraria, versaoGrade);
 
             String anoString = hash.get("ANO");
             int ano = Integer.parseInt(anoString);

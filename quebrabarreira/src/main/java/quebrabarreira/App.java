@@ -24,27 +24,27 @@ public class App {
 
         AlunoController aluno = new AlunoController(ano, historicoPath, gradePath);
 
-        // tela info aluno
-        System.out.println("GRR " + aluno.getAluno().getGRR());
-        System.out.println("NOME " + aluno.getAluno().getNome());
-        System.out.println("IRA " + aluno.getAluno().getIra());
-        System.out.println("ULTIMO PERIODO TAXA APROV " + aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
-        System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
-        System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
+        // // tela info aluno
+        // System.out.println("GRR " + aluno.getAluno().getGRR());
+        // System.out.println("NOME " + aluno.getAluno().getNome());
+        // System.out.println("IRA " + aluno.getAluno().getIra());
+        // System.out.println("ULTIMO PERIODO TAXA APROV " + aluno.getAluno().getTaxaAprovacaoUltimoPeriodo());
+        // System.out.println("ULTIMO ANO CURSADO " + aluno.getAluno().getUltimoAnoCursado());
+        // System.out.println("ULTIMO PERIODO " + aluno.getAluno().getUltimoPeriodoCursado());
 
-        List<String> materiasPedidas = new ArrayList<>();
-        materiasPedidas.add("CI1061");
-        materiasPedidas.add("CI1163");
-        materiasPedidas.add("CI1350");
-        materiasPedidas.add("CI1215");
-        materiasPedidas.add("CI1165");
-        materiasPedidas.add("CI1028");
-        Pedido pedido = new Pedido(aluno.getAluno().getGRR(), "1", materiasPedidas);
-        pedido.savePedido();
-        pedido.readPedido();
+        // List<String> materiasPedidas = new ArrayList<>();
+        // materiasPedidas.add("CI1061");
+        // materiasPedidas.add("CI1163");
+        // materiasPedidas.add("CI1350");
+        // materiasPedidas.add("CI1215");
+        // materiasPedidas.add("CI1165");
+        // materiasPedidas.add("CI1028");
+        // Pedido pedido = new Pedido(aluno.getAluno().getGRR(), "1", materiasPedidas);
+        // pedido.savePedido();
+        // pedido.readPedido();
         
-        List<String> res = new ArrayList<>();
-        res = pedido.trataPedido(aluno);
-        System.out.println(res);
+        // List<String> res = new ArrayList<>();
+        // res = pedido.trataPedido(aluno);
+        // System.out.println(res);
     }
 }

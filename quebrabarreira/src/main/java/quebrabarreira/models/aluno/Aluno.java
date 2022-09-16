@@ -3,7 +3,10 @@ package quebrabarreira.models.aluno;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.loading.PrivateClassLoader;
+
 import quebrabarreira.models.aluno.curso.Curso;
+import quebrabarreira.models.aluno.curso.Disciplina;
 import quebrabarreira.models.aluno.historico.HistoricoDisciplina;
 
 public class Aluno {
@@ -12,10 +15,12 @@ public class Aluno {
     private Curso curso;
     private List<HistoricoDisciplina> disciplinas;
     private List<HistoricoDisciplina> ultimoPeriodoDisciplinas;
+    private List<Disciplina> materiasQueFaltaNaBarreira;
     private int ultimoAnoCursado;
     private int ultimoPeriodoCursado;
     private double taxaAprovacaoUltimoPeriodo;
     private double ira;
+
     // private double iraUltimoPeriodo;
 
     public Aluno() {
@@ -175,27 +180,24 @@ public class Aluno {
         return taxa*100;
     }
 
-    // public double calcularIRAUltimoPeriodo() {
-    // double ultimoIra;
-    // double somatorioMedia = 0;
-    // double cargaHorariaTotal = 0;
+    public void calcMateriasBarreira() {
 
-    // for (HistoricoDisciplina historicoDisciplina :
-    // this.historicosUltimoPeriodo()) {
-    // somatorioMedia = somatorioMedia
-    // + historicoDisciplina.getMedia() *
-    // historicoDisciplina.getDisciplina().getCargaHoraria();
-    // cargaHorariaTotal = cargaHorariaTotal +
-    // historicoDisciplina.getDisciplina().getCargaHoraria();
+        System.out.println(this.curso.getDisciplinas());
+        System.out.println(this.disciplinas);
 
-    // }
-    // cargaHorariaTotal = cargaHorariaTotal * 100;
-    // ultimoIra = somatorioMedia / cargaHorariaTotal;
+        this.materiasQueFaltaNaBarreira = new ArrayList<>();
+        for(Disciplina disc: this.curso.getDisciplinas()) {
+            if (disc.getPeriodoIdeal() <= 3) {
+                for (HistoricoDisciplina hist: this.disciplinas) {
+                    if (disc.getCodigoDisciplina().equals(hist.getDisciplina().getCodigoDisciplina())) {
+                        this.materiasQueFaltaNaBarreira.add(hist.getDisciplina());
+                    }
+                }
+            }
+        }
 
-    // return ultimoIra;
-    // }
-
-
+        System.out.println(this.materiasQueFaltaNaBarreira);
+    }
 
     public List<HistoricoDisciplina> MateriasCursadas() {
         return disciplinas;
