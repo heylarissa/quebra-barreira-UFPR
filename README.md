@@ -2,8 +2,11 @@
 Trabalho da disciplina de Paradigmas de Programação
 
 Feito por:
+
 Artur Temporal Coelho
+
 Larissa Hey D'Andrade
+
 Eduardo Camargo Neves
 
 O sistema tem por objetivo auxiliar o aluno no seu pedido de quebra de barreira, verificar a situação do
@@ -30,14 +33,14 @@ C > 1/2 aprovação no sem. anterior
 
 **Comandos:**
 
-1. Criar o projeto (não é necessário):
+1. Entrar no diretorio:
 ```shell
-mvn archetype:generate
+cd quebrabarreira
 ```
 
 2. Compilar
 ```shell
-mvn compile
+make
 ```
 
 3. Executar
